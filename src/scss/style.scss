@@ -1,0 +1,24 @@
+// utilities
+@import 
+'utilities/variables',
+'utilities/mixins';
+
+//base
+@import 
+'base/reset',
+'base/base';
+
+
+// layout
+@import 
+'layout/header',
+'layout/main',
+'layout/footer';
+
+//components
+@import
+'components/headerContent',
+'components/logIn',
+'components/courses',
+'components/createCourse',
+'components/details'
