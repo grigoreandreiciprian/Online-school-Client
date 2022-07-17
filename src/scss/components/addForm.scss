@@ -1,0 +1,60 @@
+.form{
+   
+        background-image: url("/imgs/formBackground.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        height:100vh;  
+        width:100%;
+        
+        
+        .formBody{
+            width:50%;
+            margin: 5% auto;
+            // border: 2px solid red;
+            border-radius: 20px;
+            color: white;
+            text-align: center;
+            color:white;
+            // border: 2px solid red;
+        }
+
+        .input{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            width: 40%;
+            margin: auto;
+        }
+
+        .input label{
+            margin: 10px;
+        }
+
+        .input input{
+            width: 100%;
+            padding: 10px;
+        }
+
+        .input select{
+            width: 100%;
+            padding: 10px;
+          }
+          
+
+        .btn{
+            padding:10px 20px;
+            width:20%;
+            font-size: 20px;
+            font-weight: bolder;
+            color: $primary;
+        }
+    
+        .btn:hover{
+            background-color: $primary;
+            color: white;
+        }
+}

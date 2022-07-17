@@ -15,6 +15,7 @@ import LogIn from './pages/LogIn';
 
 import UserProvider from './Context/Context';
 
+
 import{
   BrowserRouter,
   Routes,
@@ -30,7 +31,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/add" element={<Add />}></Route>
           <Route path="/details/:courseId" element={<CourseDetails />}></Route>
-          <Route path="/update/:courseId" element={<Update />}></Route>
+          <Route path="/update/:courseId" element={<Update />}></Route> 
           <Route path="/SignUp" element={<SignUp />}></Route>
           <Route path="/LogIn" element={<LogIn />}></Route>
         </Routes>

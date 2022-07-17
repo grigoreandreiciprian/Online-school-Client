@@ -1,0 +1,19 @@
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+}
+.overlay h1 {
+  margin: 20px 0px;
+}
+.overlay .intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  color: white;
+  padding: 20px;
+  margin-top: 2%;
+}
+
+/*# sourceMappingURL=overlay.css.map */

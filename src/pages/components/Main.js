@@ -1,16 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-import CoursesBox from './CoursesBox'
+import CoursesBox from './MainComponents/CoursesBox'
 
 import Data from '../../Api'
 
-import NewC from './NewC'
+
 
 import { useState, useEffect } from 'react'
+import { Context } from '../../Context/Context'
+
+import {useNavigate} from "react-router-dom"
 
 export default () =>{
 
+   let navigate= useNavigate()
+
     const [courses,setCourses]= useState([])
+
+    const [user,setUser]= useContext(Context)
+
+
 
 
     let getAll= async () =>{

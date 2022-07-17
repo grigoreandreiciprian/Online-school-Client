@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 
 import { Link } from "react-router-dom";
-import { Context } from "../../Context/Context";
+import { Context } from "../../../Context/Context";
+
+import Button from 'react-bootstrap/Button';
 
 export default () => {
   const [user, setUser] = useContext(Context);
@@ -13,15 +15,17 @@ export default () => {
   return (
     <nav>
       {user? (
-        <div className="row">
        
-       <h2>Hello, </h2>
+        <>
+          <div className="text">
             <p>Bine ai venit {user.lastName}</p>
+          </div>
             <Link className="link" to={"/LogIn"} onClick={out}>
             Log out
           </Link>
+
+          </>
          
-        </div>
       ) : (
         <div>
            <Link className="link" to={"/LogIn"}>

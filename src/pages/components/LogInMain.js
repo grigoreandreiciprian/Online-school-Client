@@ -24,6 +24,12 @@ export default () => {
     const navigate= useNavigate()
 
 
+    useEffect(() =>{
+
+      setUser("")
+    })
+
+
     const handleChanger= (email,password) =>{
 
         setEmail(email)

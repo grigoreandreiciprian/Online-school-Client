@@ -1,7 +1,10 @@
+
+
 // utilities
 @import 
 'utilities/variables',
 'utilities/mixins';
+
 
 //base
 @import 
@@ -11,14 +14,19 @@
 
 // layout
 @import 
+
 'layout/header',
 'layout/main',
 'layout/footer';
 
 //components
 @import
-'components/headerContent',
+// 'components/headerContent',
 'components/logIn',
+
+'components/details',
+
+'components/upperHeader.scss',
+'components/overlay.scss',
 'components/courses',
-'components/createCourse',
-'components/details'
+'components/addForm.scss'

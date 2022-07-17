@@ -1,0 +1,86 @@
+.courses{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 70%;
+    margin: auto;
+    
+
+
+    .course{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+        background-color: white;
+        color: black;
+        border: 2px solid gray;
+    }
+
+    .course h1{
+        font-size: 30px;
+        text-align: center;
+        margin: 0px;
+    }
+
+    .rating{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: gold;
+        padding: 10px;
+    }
+
+    .creator{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: gray;
+    }
+
+    .icon{
+        width: 15%;
+        border-radius: 100px;
+        margin: 10px;
+    }
+
+    h3{
+        padding: 10px;
+        margin: 10px;
+        font-size: 16px;
+        background-color: rgb(128, 128, 128, .3);
+        color: $primary;
+    }
+
+    p{
+        color: $primary;
+        font-weight: bold;
+    }
+
+    .enroll{
+        padding:10px 20px;
+        width:90%;
+        font-size: 20px;
+        font-weight: bolder;
+        color: $primary;
+    }
+
+    .enroll:hover{
+        background-color: $primary;
+        color: white;
+    }
+
+    .buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+    
+}
+
+

@@ -1,24 +1,36 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import Header from './components/Header'
 
 import Main from './components/Main'
 
-import logo2 from '../imgs/logo2.png'
+
 
 import _header from "../scss/layout/_header.scss"
 import { Context } from '../Context/Context'
+
+import {useNavigate} from "react-router-dom"
 
 export default  () => {
 
   const [user,setUser] = useContext(Context)
 
+  let navigate= useNavigate()
+    
+  useEffect(()=>{
+    
+    if(user){
+      navigate("/")
+    }else{
+      navigate("/LogIn")
+    }
+  },[])
    const  acess = () =>{
     setUser("")
    }
   return (
     <>
-   <Header logo={logo2} />
+   <Header  />
     <Main />
     </>
   )

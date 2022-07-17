@@ -1,0 +1,113 @@
+.upperHeader{
+
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   width: 80%;
+   margin: auto;
+   padding: 40px 0px;
+   color:white;  
+   
+     h2{
+        color: #1EB2A6;
+        font-weight: bolder;
+        font-size: 20px;
+     }
+    .logo{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+    }
+
+    .logoLink{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo img{
+        width: 60%;
+        margin-bottom: 10px;
+    }
+
+
+    .content{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 70%;
+    }
+
+
+    .contact{
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        grid-gap:100px;  
+    }
+
+    .contactBox{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contactBox i{
+        font-size: 35px;
+        padding: 20px;
+    }
+
+
+    .social{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .social i{
+        font-size:25px ;
+        padding: 10px;
+        border-radius: 100px;
+        background-color: white;
+        color: $primary;
+        margin: 10px;
+        transition: .3s all;
+    }
+
+    .social i:hover{
+        background-color: $primary;
+        color: white;
+    }
+
+    .sign{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sign a{
+        text-decoration: none;
+        font-size: 25px;
+        padding: 10px;
+        color: white;
+    }
+
+
+    .big{
+        font-size:35px;
+        transition: .3s all;
+      }
+      
+      .big:hover{
+        color: #1EB2A6;
+      
+      }
+
+    
+}

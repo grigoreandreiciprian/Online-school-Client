@@ -25,9 +25,12 @@ export default class Data{
         return fetch( url, options);
     }
 
-    async getCourses(){
+    async getCourses(token){
 
-        let response = await this.api("/courses", 'GET')
+        let response = await this.api("/courses", 'GET',null,token)
+
+
+
 
         return response.json()
     }
@@ -44,7 +47,7 @@ export default class Data{
 
 
     async addStudent(student){
-        let response= await this.api("/students",'POST',student)
+        let response= await this.api("/users",'POST',student)
 
         if(response.status==204){
             return []
@@ -68,7 +71,7 @@ export default class Data{
 
     async logIn (student) {
 
-        let response= await this.api('/students/log', 'POST',student)
+        let response= await this.api('/users/log', 'POST',student)
 
        
         let data = await response.json();
@@ -76,6 +79,28 @@ export default class Data{
         
 
         return data
+    }
+
+
+    async addEnrolment (enrolment){
+
+        let response = await this.api("/enrolment", 'POST', enrolment)
+    }
+
+
+    async getEnrolment(){
+
+        let response = await this.api("/enrolment", 'GET')
+
+        return response.json()
+    }
+
+
+    async deleteEnrolment(enrolment){
+
+        let response = await this.api(`/enrolment/${enrolment.id}`, 'DELETE', enrolment)
+
+        return response
     }
 }
 

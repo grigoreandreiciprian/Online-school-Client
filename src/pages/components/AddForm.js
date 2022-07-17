@@ -5,12 +5,14 @@ import { Context } from '../../Context/Context'
 
 export default ({handleChanger,cancel,addCourse}) => {
 
-    
+       
     let [courseName,setName]= useState("")
 
     let [department,setDepartment]= useState("")
 
-    const [user,setUser] = useContext(Context)
+   
+
+    
 
 
 
@@ -37,13 +39,15 @@ export default ({handleChanger,cancel,addCourse}) => {
     <div className="form" onChange={onChange}>
          <h1>Create Course</h1>
 
+         {/* <h2>Created by {lastName}</h2> */}
+
          <div className="inputs2">
              <label for="title">Course Title</label>
              <input type="text" className="title"></input>
            
          </div>
 
-         <h2>Created by {user.lastName}</h2>
+         
 
          <div className="inputs2">
              <label for="description">Course Department</label>
