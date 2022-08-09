@@ -73,7 +73,7 @@ export default () => {
 
            if( response.token){
 
-            console.log(response.token)
+          
             
             setUser(response);
             Cookies.set("authentificatedUser", JSON.stringify(response));
@@ -97,7 +97,7 @@ export default () => {
 
   return (
 
-    <section class="overlay">
+    <section className="overlay">
     <UpperHeader />
     <LogInFormBody log={log} handleChanger={handleChanger}/>
    

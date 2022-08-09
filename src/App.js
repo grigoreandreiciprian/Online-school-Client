@@ -13,6 +13,8 @@ import SignUp from './pages/SignUp';
 
 import LogIn from './pages/LogIn';
 
+import Statistics from './pages/Statistics';
+
 import UserProvider from './Context/Context';
 
 
@@ -34,6 +36,7 @@ function App() {
           <Route path="/update/:courseId" element={<Update />}></Route> 
           <Route path="/SignUp" element={<SignUp />}></Route>
           <Route path="/LogIn" element={<LogIn />}></Route>
+          <Route path="/Statistics" element={<Statistics />}></Route>
         </Routes>
       </UserProvider>
     </BrowserRouter>

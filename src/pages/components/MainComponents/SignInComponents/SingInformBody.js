@@ -17,6 +17,8 @@ export default ({handlechanger,signStudent}) => {
 
     let [role_id, setRole]= useState(0)
 
+    const [profile, setProfile]= useState("")
+
     const onChange = (e) =>{
 
         let obj= e.target;
@@ -45,8 +47,10 @@ export default ({handlechanger,signStudent}) => {
           setRole(2)
         }
 
-        console.log(role_id)
+        // console.log(role_id)
          
+      }else if(obj.classList.contains("profile")){
+        setProfile(obj.value)
       }
      
 
@@ -55,51 +59,57 @@ export default ({handlechanger,signStudent}) => {
     }
 
     useEffect(()=>{
-      handlechanger(firstName,lastName,email,age,password,role_id)
+      handlechanger(firstName,lastName,email,age,password,role_id,profile)
   })
 
   return (
-    <section class="formBody">
+    <section className="formBody">
       
-    <div class="inputs" onChange={onChange} >
+    <div className="inputs" onChange={onChange} >
 
         <h1>Create a free account</h1>
 
         <div className='input'>
-          <select className='type'>
-          <option value="" disabled selected>Chose account type</option>
+          <select className='type' defaultValue="">
+          <option value="" disabled>Chose account type</option>
             <option>Student</option>
             <option>Profesor</option>
           </select>
         </div>
          
-         <div class="input">
+         <div className="input">
           
-             <input type="text" class="firstName" placeholder="First Name"></input>
+             <input type="text" className="firstName" placeholder="First Name"></input>
          </div>
 
-         <div class="input">
+         <div className="input">
           
-             <input type="text" class="lastName" placeholder="Last Name"></input>
+             <input type="text" className="lastName" placeholder="Last Name"></input>
          </div>
 
 
-         <div class="input">
+         <div className="input">
        
-             <input type="email" class="email" placeholder="Email"></input>
+             <input type="email" className="email" placeholder="Email"></input>
          </div>
 
-         <div class="input">
+         <div className="input">
        
-            <input type="number" class="age" placeholder="Age"></input>
+            <input type="number" className="age" placeholder="Age"></input>
         </div>
 
-        <div class="input">
+         <div className="input">
        
-            <input type="text" class="password" placeholder="Password"></input>
+            <input type="text" className="profile" placeholder="Profile pic"></input>
         </div>
 
-        <button class="btn" onClick={signStudent}>Sign in</button>
+
+        <div className="input">
+       
+            <input type="text" className="password" placeholder="Password"></input>
+        </div>
+
+        <button className="btn" onClick={signStudent}>Sign in</button>
     </div>
  </section>
   )

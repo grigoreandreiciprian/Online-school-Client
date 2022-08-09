@@ -6,7 +6,7 @@ export default () => {
     const [user,setUser]= useContext(Context)
 
   return (
-        <div class="intro">
+        <div className="intro">
                  {
                     
                     user?(

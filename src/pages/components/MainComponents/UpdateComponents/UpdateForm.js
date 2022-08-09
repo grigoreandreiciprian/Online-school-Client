@@ -4,7 +4,7 @@ import UpdateFormMain from './UpdateFormMain'
 export default () => {
   return (
 
-    <section class="form">
+    <section className="form">
             <UpdateFormMain />   
     </section>
     

@@ -4,7 +4,7 @@ import SignInFormOverlay from './SignInFormOverlay'
 export default () => {
   return (
 
-    <section class="form">
+    <section className="form">
             <SignInFormOverlay />   
     </section>
     

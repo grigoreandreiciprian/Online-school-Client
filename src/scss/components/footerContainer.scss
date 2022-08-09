@@ -1,0 +1,139 @@
+.footerContainer{
+    width:80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+
+    .footerLogo{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .footerLogo img{
+        width: 80%;
+        
+    }
+
+    .footerLogo p{
+        font-size: 17px;
+        padding: 20px 0px;
+    }
+
+    .social{
+       
+        width: 100%;
+        display: flex;
+        padding: 0px 50px;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .social i{
+        margin: 0px 10px;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 100px;
+        background-color: $primary;
+        color: white;
+    }
+
+    .footerNav{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        
+    }
+
+    .links{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .links a{
+        font-size: 20px;
+        padding: 10px 0px;
+        color: black;
+        text-decoration: none;
+        transition: 0.3s all;
+    }
+
+    .links a:hover{
+        
+        color: $primary;
+        transform: scale(1.2);
+    }
+
+
+    .footerPosts{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footerContent{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 0px 20px 0px;
+    }
+
+    .footerContent img{
+        width: 15%;
+    }
+
+    .date{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+       
+    }
+
+    .post{
+        // border: 2px solid red;
+        margin-top: 20px;
+    }
+
+    .date i{
+        color: $primary;
+        padding: 0px 15px;
+    }
+
+    .post h1{
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .questions{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0px 20px;
+    }
+
+    .question{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 5% 0px;
+ 
+        width: 100%;
+    }
+
+    .question i{
+        color: $primary;
+        font-size: 18px;
+        padding: 0px 20px;
+    }
+}

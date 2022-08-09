@@ -19,9 +19,9 @@ export default () => {
     }
   return (
 
-    <div class="upperHeader">
+    <div className="upperHeader">
                 
-                <div class="logo">
+                <div className="logo">
                 <Link  className='logoLink' to={"/"}>
                          <img src={whiteLogo}></img>
                  </Link>
@@ -30,21 +30,21 @@ export default () => {
                 </div>
             
            
-           <div class="content">
-                    <div class="contact">
+           <div className="content">
+                    <div className="contact">
 
-                        <div class="contactBox">
-                            <i class="fa-solid fa-clock"></i>
-                            <div class="contactText">
+                        <div className="contactBox">
+                            <i className="fa-solid fa-clock"></i>
+                            <div className="contactText">
                                 <p>Monday-Friday</p>
                                 <p>8:00Am - 8:00PM</p>
                             </div>
                         </div>
 
 
-                        <div class="contactBox">
-                            <i class="fa-solid fa-phone"></i>
-                            <div class="contactText">
+                        <div className="contactBox">
+                            <i className="fa-solid fa-phone"></i>
+                            <div className="contactText">
                                 <p>Call Us</p>
                                 <p>+2 392 3929 210</p>
                             </div>
@@ -52,23 +52,24 @@ export default () => {
                     </div>
 
 
-                    <div class="social">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-youtube"></i>
+                    <div className="social">
+                        <i className="fa-brands fa-facebook-f"></i>
+                        <i className="fa-brands fa-instagram"></i>
+                        <i className="fa-brands fa-twitter"></i>
+                        <i className="fa-brands fa-youtube"></i>
                     </div>
+
 
                    {
                     user?(
 
                         <div className='sign'>
-                            <i class="fa-solid fa-arrow-right-from-bracket big" onClick={out}></i>
+                            <i className="fa-solid fa-arrow-right-from-bracket big" onClick={out}></i>
                         </div>
 
                     ):(
                         
-                        <div class="sign">
+                        <div className="sign">
                         <Link className="link" to={"/LogIn"}>
                             Log in
                         </Link>

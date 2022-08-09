@@ -11,6 +11,8 @@ import { Context } from '../Context/Context'
 
 import {useNavigate} from "react-router-dom"
 
+import Footer from './components/Footer'
+
 export default  () => {
 
   const [user,setUser] = useContext(Context)
@@ -32,6 +34,7 @@ export default  () => {
     <>
    <Header  />
     <Main />
+    <Footer />
     </>
   )
 }

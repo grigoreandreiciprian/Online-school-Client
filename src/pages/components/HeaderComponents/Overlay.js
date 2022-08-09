@@ -9,7 +9,7 @@ import Intro from './Intro'
 export default () => {
   return (
     
-    <section class="overlay">
+    <section className="overlay">
       <UpperHeader />
       <Intro />
     </section>

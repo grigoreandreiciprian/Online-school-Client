@@ -26,6 +26,13 @@ export default () => {
 
     const [createdBy, setCreator] = useState("Unknown")
 
+    const [minEffort,setMin]= useState(0)
+
+    const [maxEffort,setMax]= useState(0)
+
+    const [category,setCategory] = useState("")
+
+
     useEffect(()=>{
 
       if(user){
@@ -33,7 +40,7 @@ export default () => {
       }
     })
 
-    const handlechanger = (courseName,lectures,hours,totalPrice,perMonth) =>{
+    const handlechanger = (courseName,lectures,hours,totalPrice,perMonth,minEffort,maxEffort,category) =>{
 
       
       
@@ -42,6 +49,9 @@ export default () => {
         setHours(hours)
         setTotalPrice(totalPrice)
         setPerMonth(perMonth)
+        setMin(minEffort)
+        setMax(maxEffort)
+        setCategory(category)
        }
 
 
@@ -54,7 +64,7 @@ export default () => {
               
             let data= new Data()
 
-             await data.addCourse({courseName,lectures,createdBy,hours,totalPrice,perMonth})
+             await data.addCourse({courseName,lectures,createdBy,hours,totalPrice,perMonth,minEffort,maxEffort,category})
 
             navigate("/")    
 
@@ -66,7 +76,7 @@ export default () => {
 
 
   return (
-    <section class="overlay">
+    <section className="overlay">
       <UpperHeader />
       <AddFormBody  handlechanger={handlechanger} add={addCourse} />
      

@@ -1,72 +1,54 @@
-import React from 'react'
-
-import Buttons from './Buttons'
-import DetailsContent from './DetailsContent'
-import { useNavigate, useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import Data from '../../Api'
 
+import Detail from './MainComponents/DetailsComponents/Detail'
+
+import Offered from './MainComponents/DetailsComponents/Offered'
+
+
+
 export default () => {
+
+
+  const [course,setCourse]= useState("")
 
   let id= useParams().courseId
 
   
-    const navigate= useNavigate()
 
-    const cancel=() =>{
+  const findCourse = async () =>{
 
-        navigate("/")
-     }
+    try{
 
-    const findCourse= async (id) =>{
+      let data= new Data()
 
-      try{
+      let courses= await  data.getCourses()
 
-        let data= new Data()
+      let course= courses.filter(e=> e.id == id)[0]
 
-        let courses= await data.getCourses()
-
-        let course= courses.filter(e => e.id == id)
-
-        return course
-
-      }catch (e){
-        console.log(e)
-      }
+      setCourse(course)
+    }catch(e){
+      console.log(e)
     }
 
-     const toUpdate = (id) =>{
+  }
 
-      navigate(`/update/${id}`)
 
-    }
+  useEffect(()=>{
 
-     const delCourse = async (id) =>{
-        try{
-            let data=new Data()
+    findCourse()
+   
+  },[])
 
-            let courses=  await data.getCourses()
+  
 
-            let course= courses.filter(e=> e.id == id)
+  
 
-            await data.deleteCourse(course[0])
-
-            navigate("/")
-
-            
-        }catch(e){
-             
-            console.log(e)
-        }
-    }
   return (
-    <>
-    <section className='details'>
-            <Buttons  cancel={cancel} deleteCourse={delCourse} toUpdate={toUpdate}/>
-            <DetailsContent  findCourse={findCourse} />
-
-           
+    <section className="details">
+        <Detail  course={course}/>
+        <Offered />
     </section>
-
-    </>
   )
 }

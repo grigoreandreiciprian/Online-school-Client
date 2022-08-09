@@ -108,40 +108,21 @@ export default ({cancel,deleteCourse,toUpdate}) => {
 
 
     
-
-
-    
-  
-
-
-  
-
-    
-
-  
-
-    
-    
-    
-
-    
-
-    
   return (
-    <section class="buttons2">
-    <button class="enroll btn2 " onClick={enroll}>Enroll</button>
-    <button class="unsub btn2" onClick={unsubscribe}>Unsubscribe</button>
+    <section className="buttons2">
+    <button className="enroll btn2 " onClick={enroll}>Enroll</button>
+    <button className="unsub btn2" onClick={unsubscribe}>Unsubscribe</button>
 
     
     
       {
          user.lastName == createdBy?(
             <>
-                 <button class="enroll btn2 " onClick={()=>{
+                 <button className="enroll btn2 " onClick={()=>{
                   toUpdate(id)
                 }}>Update</button>
                 
-                <button class="delete btn2" onClick={() => {
+                <button className="delete btn2" onClick={() => {
                 
                     deleteCourse(id) 
 
@@ -155,7 +136,7 @@ export default ({cancel,deleteCourse,toUpdate}) => {
 
     
     <a href="#">
-        <button class="return btn2" onClick={cancel}>Return to list</button>
+        <button className="return btn2" onClick={cancel}>Return to list</button>
 
     </a>
 </section>

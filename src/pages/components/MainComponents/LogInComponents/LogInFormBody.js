@@ -22,8 +22,7 @@ export default ({handleChanger,log}) => {
           setPassword(obj.value)
       }
 
-     
-      console.log(email,password)
+    
   }
 
   useEffect(()=>{
@@ -31,25 +30,25 @@ export default ({handleChanger,log}) => {
 })
 
   return (
-    <section class="formBody">
+    <section className="formBody">
       
-    <div class="inputs" onChange={onChange}>
+    <div className="inputs" onChange={onChange}>
 
         <h1>Log In </h1>
          
-         <div class="input">
+         <div className="input">
           
-             <input type="text" class="email" placeholder="Email"></input>
+             <input type="text" className="email" placeholder="Email"></input>
          </div>
 
-         <div class="input">
+         <div className="input">
           
-             <input type="password" class="password" placeholder="Password"></input>
+             <input type="password" className="password" placeholder="Password"></input>
          </div>
 
 
        
-        <button class="btn" onClick={log}>Log in</button>
+        <button className="btn" onClick={log}>Log in</button>
     </div>
  </section>
 

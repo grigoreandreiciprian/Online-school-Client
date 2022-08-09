@@ -354,8 +354,16 @@ header {
 }
 
 main {
+  background-color: white;
+}
+main h1 {
+  text-align: center;
+  margin: 50px;
+}
+
+footer {
   background-color: #eee;
-  padding: 50px;
+  padding: 20px;
 }
 
 .logIn {
@@ -389,47 +397,63 @@ main {
   background-color: #3b84ce;
 }
 
-.details .buttons2 {
+.details {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  width: 90%;
+  margin: 2% auto;
+}
+.details .offered {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #3b84ce;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
-.details .btn2 {
-  padding: 5px 70px;
-  margin: 10px 15px;
-  background-color: #AECE61;
-  color: white;
-  transition: 0.3s all;
-  width: 250px;
-}
-.details .btn2:hover {
-  background-color: #3b84ce;
-}
-.details .courseDetails {
+.details .offered img {
   width: 50%;
+}
+.details .offered h2 {
+  margin: 5%;
+}
+.details .detail {
+  width: 60%;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10px 50px;
-}
-.details .courseDetails h1 {
-  text-align: center;
-}
-.details .courseDetails h2 {
-  margin: 15px 0px;
-}
-.details .courseDetails h3 {
-  margin: 10px 0px;
-}
-.details .courseDetails h4 {
-  margin: 20px 0px;
+  align-items: center;
   font-size: 20px;
 }
-.details .line {
-  border-bottom: 1px solid gray;
+.details .creator {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.details .creator img {
+  width: 15%;
+  padding: 10px;
+}
+.details .rating {
+  padding: 20px;
+}
+.details .rating i {
+  color: gold;
+}
+.details p {
+  padding: 10px;
+}
+.details .btn {
+  padding: 10px 20px;
+  width: 30%;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #1eb2a6;
+  margin: 10px;
+}
+.details .btn:hover {
+  background-color: #1eb2a6;
+  color: white;
 }
 
 .upperHeader {
@@ -611,6 +635,9 @@ main {
   justify-content: center;
   align-items: center;
 }
+.courses .cursor {
+  cursor: pointer;
+}
 
 .form {
   background-image: url("../imgs/formBackground.jpg");
@@ -618,7 +645,7 @@ main {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  height: 100vh;
+  height: 130vh;
   width: 100%;
 }
 .form .formBody {
@@ -649,6 +676,10 @@ main {
   width: 100%;
   padding: 10px;
 }
+.form .category {
+  width: 40%;
+  padding: 5px;
+}
 .form .btn {
   padding: 10px 20px;
   width: 20%;
@@ -660,5 +691,297 @@ main {
   background-color: #1eb2a6;
   color: white;
 }
+
+.footerContainer {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.footerContainer .footerLogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footerContainer .footerLogo img {
+  width: 80%;
+}
+.footerContainer .footerLogo p {
+  font-size: 17px;
+  padding: 20px 0px;
+}
+.footerContainer .social {
+  width: 100%;
+  display: flex;
+  padding: 0px 50px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footerContainer .social i {
+  margin: 0px 10px;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 100px;
+  background-color: #1eb2a6;
+  color: white;
+}
+.footerContainer .footerNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footerContainer .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footerContainer .links a {
+  font-size: 20px;
+  padding: 10px 0px;
+  color: black;
+  text-decoration: none;
+  transition: 0.3s all;
+}
+.footerContainer .links a:hover {
+  color: #1eb2a6;
+  transform: scale(1.2);
+}
+.footerContainer .footerPosts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footerContainer .footerContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px 20px 0px;
+}
+.footerContainer .footerContent img {
+  width: 15%;
+}
+.footerContainer .date {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.footerContainer .post {
+  margin-top: 20px;
+}
+.footerContainer .date i {
+  color: #1eb2a6;
+  padding: 0px 15px;
+}
+.footerContainer .post h1 {
+  font-size: 17px;
+  text-align: center;
+}
+.footerContainer .questions {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px 20px;
+}
+.footerContainer .question {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 5% 0px;
+  width: 100%;
+}
+.footerContainer .question i {
+  color: #1eb2a6;
+  font-size: 18px;
+  padding: 0px 20px;
+}
+
+.courseDetailHead {
+  background-image: linear-gradient(to right, black, #1eb2a6);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  height: 20vh;
+}
+
+.filter {
+  width: 100%;
+  margin-bottom: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.filter button {
+  padding: 2px 20px;
+  margin: 5px;
+  font-size: 16px;
+  transition: 0.3s all;
+}
+.filter button:hover {
+  background-color: #1eb2a6;
+  color: white;
+}
+.filter button:focus {
+  background-color: #1eb2a6;
+  color: white;
+}
+
+.statistics {
+  padding: 30px;
+}
+.statistics h1 {
+  text-align: center;
+  font-size: 30px;
+  margin: 10px;
+}
+.statistics .teachers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 90%;
+  margin: 5% auto;
+  grid-gap: 40px;
+}
+.statistics .teacher {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  position: relative;
+  color: black;
+  border: 2px solid gray;
+  transition: 0.3s all;
+}
+.statistics .teacher:hover {
+  background-color: #1eb2a6;
+  color: white;
+}
+.statistics .teacher h1 {
+  font-size: 30px;
+  text-align: center;
+  margin: 0px;
+}
+.statistics .teacher p {
+  margin: 10px;
+}
+.statistics .teacher img {
+  width: 100%;
+}
+.statistics .rating i {
+  color: gold;
+}
+.statistics .rated {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.statistics .fire {
+  padding: 5px 20px;
+  font-size: 20px;
+  transition: 0.3s all;
+}
+.statistics .fire:hover {
+  color: white;
+  background-color: black;
+}
+.statistics .rated h2 {
+  margin: 20px;
+}
+.statistics .teacherOverlay {
+  position: absolute;
+  left: 2%;
+  top: 2%;
+  width: 100%;
+  height: 85%;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.3s all;
+}
+.statistics .overlayBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 60%;
+  margin-left: 1rem;
+  color: red;
+  opacity: 1;
+}
+.statistics .teacherOverlay:hover {
+  opacity: 1;
+}
+.statistics .overlayBox i {
+  margin: 8px;
+  padding: 12px;
+  font-size: 20px;
+  border-radius: 100px;
+  background-color: black;
+  color: white;
+  transition: 0.3s all;
+}
+.statistics .overlayBox i:hover {
+  background-color: #1eb2a6;
+  color: white;
+}
+
+.Schoolstats {
+  background-image: url("../imgs/writing.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+  margin-top: 5%;
+}
+.Schoolstats .StatsShadow {
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+.Schoolstats .stat {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 80px;
+  color: white;
+  font-size: 25px;
+}
+.Schoolstats .stat i {
+  margin-right: 20px;
+  font-size: 40px;
+}
+.Schoolstats .statText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.pagination{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
 
 /*# sourceMappingURL=style.css.map */

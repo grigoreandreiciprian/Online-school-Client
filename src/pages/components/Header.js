@@ -1,12 +1,10 @@
 import React from 'react'
 
-import Logo from './HeaderComponents/Logo'
 
-import Nav from './HeaderComponents/Nav'
 
 import Overlay from './HeaderComponents/Overlay'
 
-import UpperHeader from './HeaderComponents/UpperHeader'
+
 
 
 
@@ -14,7 +12,7 @@ import UpperHeader from './HeaderComponents/UpperHeader'
 
 
 
-export default ({logo}) => {
+export default () => {
   return (
 
     <>

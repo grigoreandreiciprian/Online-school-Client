@@ -2,7 +2,7 @@ export default class Data{
 
     api(path, method = 'GET', body= null, token = null){
 
-         const url="http://localhost:3011/api/v1"+path
+         const url="/api/v1"+path
     
         const options={
             method,
@@ -85,6 +85,8 @@ export default class Data{
     async addEnrolment (enrolment){
 
         let response = await this.api("/enrolment", 'POST', enrolment)
+
+        return response
     }
 
 
@@ -101,6 +103,19 @@ export default class Data{
         let response = await this.api(`/enrolment/${enrolment.id}`, 'DELETE', enrolment)
 
         return response
+    }
+
+
+    async getUsers(){
+
+        let response= await this.api(`/users`, 'GET')
+
+        return response.json()
+    }
+
+    async removeUser(user){
+
+        let response = await this.api(`/users/${user.id}`, 'DELETE',user)
     }
 }
 

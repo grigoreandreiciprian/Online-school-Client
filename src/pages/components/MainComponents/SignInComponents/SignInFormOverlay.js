@@ -22,6 +22,8 @@ export default () => {
 
     let [role_id,setRole]= useState(0)
 
+    const [profile, setProfile]= useState("")
+
   const navigate= useNavigate();
   
   const log=() =>{
@@ -29,7 +31,7 @@ export default () => {
     navigate("/LogIn")
   }
   
-  const handlechanger = (firstName,lastName,email,age,password,role_id) =>{
+  const handlechanger = (firstName,lastName,email,age,password,role_id,profile) =>{
 
       
       
@@ -39,6 +41,7 @@ export default () => {
         setAge(age);
         setPassword(password);
         setRole(role_id)
+        setProfile(profile)
    }
 
 
@@ -48,12 +51,11 @@ const signStudent= async () =>{
          
         let data= new Data()
 
-        let student= await data.addStudent({firstName,lastName,email,age,password})
+        let student= await data.addStudent({firstName,lastName,email,age,password,role_id,profile})
 
-         navigate("/")
+        console.log(student.status)
 
-         alert("Sign Up succesful")
-
+         
     }catch(e){
          
         throw new Error(e)
@@ -61,7 +63,7 @@ const signStudent= async () =>{
 }
 
   return (
-    <section class="overlay">
+    <section className="overlay">
     <UpperHeader />
     <SingInformBody handlechanger={handlechanger} signStudent={signStudent}/>
    

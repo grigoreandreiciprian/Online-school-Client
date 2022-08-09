@@ -8,7 +8,7 @@ export default () => {
     
 
   return (
-    <section class="form">
+    <section className="form">
         <LogInFormOverlay />
     </section>
   )

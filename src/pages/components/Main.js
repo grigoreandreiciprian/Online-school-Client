@@ -4,6 +4,12 @@ import CoursesBox from './MainComponents/CoursesBox'
 
 import Data from '../../Api'
 
+import StatsMain from './MainComponents/StatsMain'
+
+import Filter from './MainComponents/Filter'
+
+import StatisticsMain from './MainComponents/StatisticsComponents/StatisticsMain'
+
 
 
 import { useState, useEffect } from 'react'
@@ -22,33 +28,41 @@ export default () =>{
 
 
 
-    let getAll= async () =>{
+   //  let getAll= async () =>{
 
-        try{
+   //      try{
 
-           let data= new Data()
+   //         let data= new Data()
 
-           let course= await data.getCourses()
+   //         let course= await data.getCourses()
 
-           setCourses(course)
+   //         setCourses(course)
 
-        }catch(e){
+   //      }catch(e){
          
-         throw new Error(e)
+   //       throw new Error(e)
 
-        }
-    }
+   //      }
+   //  }
 
-   useEffect(()=>{
+   // useEffect(()=>{
 
-    getAll()
+   //  getAll()
 
-   },[])
+   // },[])
 
   return (
      <>
      <main>
-        <CoursesBox  courses={courses}/>
+     <section className="coursesBox">
+
+       <h1>Browse Our Online Courses</h1>
+        <CoursesBox />
+
+      </section>
+
+      <StatsMain />
+      <StatisticsMain />
       </main>
      </>
   )

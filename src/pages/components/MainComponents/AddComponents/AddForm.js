@@ -4,7 +4,7 @@ import FormOverlay from './AddFormOverlay'
 
 export default () => {
   return (
-   <section class="form">
+   <section className="form">
         <FormOverlay />
    </section>
   )

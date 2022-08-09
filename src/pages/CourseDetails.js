@@ -1,23 +1,21 @@
 import React from 'react'
 
-import Header from './components/Header'
+import CourseDetailHead from './components/CourseDetailHead'
 
-import logo2 from '../imgs/logo2.png'
+import Footer from './components/Footer'
 
 import Details from './components/Details'
-
-import {useNavigate} from 'react-router-dom'
-
-
 
 export default () => {
 
   return (
     <>
-    <Header logo={logo2}/>
-    <main>
-         <Details />
-    </main>
+    <CourseDetailHead />
+    <Details />
+    <Footer />
+
     </>
+
   )
 }
+

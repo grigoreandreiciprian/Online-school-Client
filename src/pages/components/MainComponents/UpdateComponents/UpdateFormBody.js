@@ -43,39 +43,39 @@ useEffect(()=>{
 })
   return (
    
-    <section class="formBody">
+    <section className="formBody">
       
-    <div class="inputs" onChange={onChange} >
+    <div className="inputs" onChange={onChange} >
 
                 <h1>Update your course</h1>
                 
-                <div class="input">
+                <div className="input">
                 
-                    <input type="text" class="courseName" placeholder="Course Name"></input>
+                    <input type="text" className="courseName" placeholder="Course Name"></input>
                 </div>
 
-                <div class="input">
+                <div className="input">
                 
-                    <input type="number" class="lectures" placeholder="Number of lectures"></input>
+                    <input type="number" className="lectures" placeholder="Number of lectures"></input>
                 </div>
 
 
-                <div class="input">
+                <div className="input">
             
-                    <input type="number" class="hours" placeholder="Total Hours"></input>
+                    <input type="number" className="hours" placeholder="Total Hours"></input>
                 </div>
 
-                <div class="input">
+                <div className="input">
             
-                    <input type="number" class="totalPrice" placeholder="Total Price"></input>
+                    <input type="number" className="totalPrice" placeholder="Total Price"></input>
                 </div>
 
-                <div class="input">
+                <div className="input">
             
-                    <input type="number" class="mounth" placeholder="Price per month"></input>
+                    <input type="number" className="mounth" placeholder="Price per month"></input>
                 </div>
 
-                <button class="btn" onClick={updateC}>Update</button>
+                <button className="btn" onClick={updateC}>Update</button>
             </div>
         </section>
   )
