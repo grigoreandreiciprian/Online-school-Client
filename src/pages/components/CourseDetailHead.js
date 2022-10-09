@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
 
-import UpperHeader from './HeaderComponents/UpperHeader'
+import UpperHeader from "./HeaderComponents/UpperHeader";
 
-export default () => {
+const CourseDetailHead = () => {
   return (
     <section className="courseDetailHead">
-     <UpperHeader />
+      <UpperHeader />
     </section>
-  )
-}
+  );
+};
+
+export default CourseDetailHead;

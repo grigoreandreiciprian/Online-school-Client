@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
+import SignInMain from "./components/MainComponents/SignInComponents/SignInMain";
 
-import SignInForm from './components/MainComponents/SignInComponents/SignInForm'
-
-
-export default () => {
+const SignUp = () => {
   return (
     <>
-       <SignInForm />
+      <SignInMain />
     </>
-  )
-}
+  );
+};
+
+export default SignUp;

@@ -1,59 +1,32 @@
 import React, { useContext } from "react";
-import { useNavigate , Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Context } from "../../../Context/Context";
 
 import profile from "../../../imgs/profile.png";
 
+import { useSelector } from "react-redux";
+
 import Rating from "./Rating";
 
-import ButtonsProfesor from "./ButtonsProfesor";
-
-
-
-export default ({ course, delCourse, toUpdate , toDetails}) => {
+const Course = ({ course, delCourse, toUpdate, toDetails }) => {
   const [user, setUser] = useContext(Context);
 
-  const User_id= user.id;
-  const course_id= course.id
-
-  
-
-  const buttonsProfessor = () => {
-    if (user.lastName == course.createdBy) {
-      return (
-        <>
-         <ButtonsProfesor delCourse={delCourse}  toUpdate={toUpdate} course={course}/>
-        </>
-      );
-    } 
-    
-  };
-
-  const buttonsStudent = () =>{
-     return (
-     <> 
-     
-       <button className="enroll" onClick={()=>{
-         toDetails(course.id)
-       }}>More info</button>
-     </>
-
-     )
-  }
-
-  
-
-  
+  // const logedUser = useSelector((state) => state.logedUser.user);
+  const course_id = course.id;
 
   return (
     <div className="course">
-      <h1 className="cursor" onClick={()=>{
-        toDetails(course.id)
-      }}>{course.courseName}</h1>
-     <Rating />
+      <h1
+        className="cursor"
+        onClick={() => {
+          toDetails(course.id);
+        }}
+      >
+        {course.courseName}
+      </h1>
+      <Rating />
 
       <div className="creator">
-  
         <img src={profile} className="icon"></img>
         <h2>by {course.createdBy}</h2>
       </div>
@@ -65,42 +38,16 @@ export default ({ course, delCourse, toUpdate , toDetails}) => {
         ${course.totalPrice} All Course / ${course.perMonth} per month
       </h3>
 
-      {(() => {
-        if (user) {
-          if (user.role_id == 2  ) {
-            return buttonsProfessor();
-          }
-
-         
-            return buttonsStudent()
-          
-        }
-      })()
-      
-      }
+      <button
+        className="enroll"
+        onClick={() => {
+          toDetails(course.id);
+        }}
+      >
+        More info
+      </button>
     </div>
   );
 };
 
-// if (user) {
-
-//     if (user.role_id == 2) {
-//       if (user.lastName == course.createdBy) {
-//         <div className="buttons">
-//           <button
-//             class="enroll"
-//             onClick={() => {
-//               delCourse(course.id);
-//             }}
-//           >
-//             Delete
-//           </button>
-//           <button
-//             class="enroll"
-//             onClick={() => {
-//               toUpdate(course.id);
-//             }}
-//           >
-//             Update
-//           </button>
-//         </div>;
+export default Course;

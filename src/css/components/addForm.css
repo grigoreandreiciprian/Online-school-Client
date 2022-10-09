@@ -1,17 +1,250 @@
-/* Error: Undefined variable.
- *    ,
- * 59 |             color: $primary;
- *    |                    ^^^^^^^^
- *    '
- *   scss\components\addForm.scss 59:20  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 59 \2502              color: $primary;\d\a    \2502                     ^^^^^^^^\a    \2575 \a   scss\\components\\addForm.scss 59:20  root stylesheet";
+.form {
+  background-image: url("/imgs/formBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  height: 100%;
+  padding: 100px;
 }
+.form .formBody {
+  width: 100%;
+  margin: auto;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  color: black;
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: white;
+  height: 100%;
+}
+.form .formImage {
+  display: none;
+}
+.form .formImage img {
+  width: 100%;
+  height: 100%;
+  min-width: 450px;
+}
+.form .input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  width: 90%;
+  margin: auto;
+  font-size: 25px;
+}
+.form .input label {
+  margin: 10px;
+}
+.form .input input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid gray;
+  text-align: center;
+}
+.form .btn {
+  padding: 10px 20px;
+  width: 50%;
+  font-size: 23px;
+  font-weight: bolder;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  color: white;
+}
+.form .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  width: 80%;
+  margin: auto;
+}
+.form .enroll {
+  background-color: green;
+}
+.form .cancel {
+  background-color: royalblue;
+  color: white;
+}
+.form .category {
+  width: 50%;
+  text-align: center;
+  font-size: 20px;
+}
+.form .inputs {
+  padding: 20px;
+}
+
+@media (min-width: 720px) and (max-width: 1000px) {
+  .form {
+    background-image: url("/imgs/formBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100%;
+    padding: 100px;
+  }
+  .form .formBody {
+    width: 100%;
+    margin: auto;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    color: black;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: white;
+    height: 100%;
+  }
+  .form .formImage {
+    display: none;
+  }
+  .form .formImage img {
+    width: 100%;
+    height: 100%;
+  }
+  .form .input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    width: 70%;
+    margin: auto;
+    font-size: 25px;
+  }
+  .form .input label {
+    margin: 10px;
+  }
+  .form .input input {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    text-align: left;
+  }
+  .form .btn {
+    padding: 10px 20px;
+    width: 50%;
+    font-size: 23px;
+    font-weight: bolder;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    color: white;
+  }
+  .form .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    width: 80%;
+    margin: auto;
+  }
+  .form .enroll {
+    background-color: green;
+  }
+  .form .cancel {
+    background-color: royalblue;
+    color: white;
+  }
+  .form .category {
+    width: 50%;
+    text-align: center;
+    font-size: 20px;
+  }
+  .form .inputs {
+    padding: 20px;
+  }
+}
+@media (min-width: 1000px) {
+  .form {
+    background-image: url("/imgs/formBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100%;
+    padding: 100px;
+  }
+  .form .formBody {
+    width: 70%;
+    margin: auto;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: white;
+    height: 100%;
+  }
+  .form .formImage {
+    display: block;
+  }
+  .form .formImage img {
+    width: 100%;
+    height: 100%;
+  }
+  .form .input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    width: 80%;
+    margin: auto;
+  }
+  .form .input label {
+    margin: 10px;
+  }
+  .form .input input {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    text-align: left;
+  }
+  .form .btn {
+    padding: 10px 20px;
+    width: 50%;
+    font-size: 23px;
+    font-weight: bolder;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    color: white;
+  }
+  .form .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    width: 80%;
+    margin: auto;
+  }
+  .form .enroll {
+    background-color: green;
+  }
+  .form .cancel {
+    background-color: royalblue;
+    color: white;
+  }
+  .form .category {
+    width: 50%;
+    text-align: center;
+    font-size: 20px;
+  }
+  .form .inputs {
+    padding: 20px;
+  }
+}
+
+/*# sourceMappingURL=addForm.css.map */

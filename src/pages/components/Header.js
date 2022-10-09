@@ -1,25 +1,12 @@
-import React from 'react'
+import React from "react";
+import Overlay from "./HeaderComponents/Overlay";
 
-
-
-import Overlay from './HeaderComponents/Overlay'
-
-
-
-
-
- import _header from "../../scss/layout/_header.scss"
-
-
-
-export default () => {
+const Header = () => {
   return (
+    <header>
+      <Overlay />
+    </header>
+  );
+};
 
-    <>
-        <header>
-       
-           <Overlay />
-        </header>
-    </>
-  )
-}
+export default Header;

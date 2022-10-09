@@ -1,18 +1,376 @@
 .overlay{
-    background-color: rgba(0, 0, 0, .4);
+    // background-color: rgba(0, 0, 0, .2);
     height: 100%;
    
     h1{
-        margin: 20px 0px;
+        margin: 15px 0px;
     }
     .intro{
+      display: flex;
+      flex-direction: row;
+       width: 100%;
+       margin: auto;
+    //    border: 2px solid red;
+    }
+
+    .introImg{
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        // border: 2px solid red;
+        width: 60%;
+        // padding: 50px 100px;
+        display: none;
+       
+    }
+
+    .introText{
+        color: white;
+        font-size: 20px;
+    //    border: 2px solid red;
+       width: 100%;
+       display: flex;
+       text-align: center;
+       justify-content:center;
+       align-items: center;
+       flex-direction: column;
+       display: none;
+
+    }
+
+    .textBox{
+        width: 50%;
+    }
+
+    .textBox h1{
+        font-family: $titleFont;
+        font-size: 25px;
+        font-weight: bolder;
+    }
+
+    // .textBox p{
+    //     display: none;
+    // }
+
+    .headerCards{
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        padding: 40px;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 20px 0px;
+        display: none;
+    }
+
+    .headerCard{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-size: 35px;
-        color: white;
+        text-align: center;
+        border-right: 1px solid rgba(128, 128, 128, .5);
+        font-size: 15px;
         padding: 20px;
-        margin-top: 2%;
+    }
+
+    .cardTitle{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: gray;
+    }
+    .cardTitle h2{
+        font-size: 18px;
+    }
+
+    .cardTitle i{
+        padding: 10px 10px;
+        font-size: 20px;
+        color: gray;
+    }
+
+
+  
+}
+
+
+@media (min-width:850px) and (max-width:1250px){
+    .overlay{
+        // background-color: rgba(0, 0, 0, .1);
+        height: 100%;
+       
+        h1{
+            margin: 15px 0px;
+        }
+        .intro{
+          display: flex;
+          flex-direction: row;
+           width: 100%;
+           margin: auto;
+        //    border: 2px solid red;
+        }
+    
+        .introImg{
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            // border: 2px solid red;
+            width: 60%;
+            // padding: 50px 100px;
+           
+        }
+    
+        .introText{
+            color: white;
+            font-size: 20px;
+        //    border: 2px solid red;
+           width: 100%;
+           display: flex;
+           text-align: center;
+           justify-content:center;
+           align-items: center;
+           flex-direction: column;
+    
+        }
+    
+        .textBox{
+            width: 50%;
+        }
+    
+        .textBox h1{
+            font-family: $titleFont;
+            font-size: 25px;
+            font-weight: bolder;
+        }
+    
+        .textBox p{
+            display: none;
+        }
+    
+        .headerCards{
+            display: flex;
+            flex-direction: row;
+            width: 70%;
+            padding: 40px;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0px;
+        }
+    
+        .headerCard{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-right: 1px solid rgba(128, 128, 128, .5);
+            font-size: 15px;
+            padding: 20px;
+        }
+    
+        .cardTitle{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: gray;
+        }
+        .cardTitle h2{
+            font-size: 18px;
+        }
+    
+        .cardTitle i{
+            padding: 10px 10px;
+            font-size: 20px;
+            color: gray;
+        }
+    
+    
+      
+    }
+}
+
+
+@media (min-width:1250px) and (max-width:1500px){
+
+    .overlay{
+        // background-color: rgba(0, 0, 0, .1);
+        height: 100%;
+       
+        h1{
+            margin: 15px 0px;
+        }
+        .intro{
+          display: flex;
+          flex-direction: row;
+           width: 80%;
+           margin: auto;
+        //    border: 2px solid red;
+        }
+    
+        .introImg{
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            // border: 2px solid red;
+            width: 60%;
+            // padding: 50px 100px;
+           
+        }
+
+      
+    
+        .introText{
+            color: white;
+            font-size: 20px;
+        //    border: 2px solid red;
+           width: 100%;
+           display: flex;
+           text-align: center;
+           justify-content:center;
+           align-items: center;
+           flex-direction: column;
+    
+        }
+
+    
+        .textBox{
+            width: 50%;
+        }
+    
+        .textBox h1{
+            font-family: $titleFont;
+            font-size: 45px;
+            font-weight: bolder;
+        }
+
+        .textBox p{
+            display: none;
+        }
+    
+        .headerCards{
+            display: flex;
+            flex-direction: row;
+            width: 50%;
+            padding: 40px;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .headerCard{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-right: 1px solid rgba(128, 128, 128, .5);
+        }
+    
+        .cardTitle{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: gray;
+        }
+    
+        .cardTitle i{
+            padding: 10px 20px;
+            font-size: 30px;
+            color: gray;
+        }
+    
+    
+      
+    }
+
+}
+
+
+@media(min-width:1500px){
+    .overlay{
+        // background-color: rgba(0, 0, 0, .1);
+        height: 100%;
+       
+        h1{
+            margin: 15px 0px;
+        }
+        .intro{
+          display: flex;
+          flex-direction: row;
+           width: 80%;
+           margin: auto;
+        //    border: 2px solid red;
+        }
+    
+        .introImg{
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            // border: 2px solid red;
+            width: 60%;
+            // padding: 50px 100px;
+           
+        }
+    
+        .introText{
+            color: white;
+            font-size: 20px;
+        //    border: 2px solid red;
+           width: 100%;
+           display: flex;
+           text-align: center;
+           justify-content:center;
+           align-items: center;
+           flex-direction: column;
+    
+        }
+    
+        .textBox{
+            width: 50%;
+        }
+    
+        .textBox h1{
+            font-family: $titleFont;
+            font-size: 45px;
+            font-weight: bolder;
+        }
+    
+        .headerCards{
+            display: flex;
+            flex-direction: row;
+            width: 50%;
+            padding: 40px;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .headerCard{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-right: 1px solid rgba(128, 128, 128, .5);
+        }
+    
+        .cardTitle{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: gray;
+        }
+    
+        .cardTitle i{
+            padding: 10px 20px;
+            font-size: 30px;
+            color: gray;
+        }
+    
+    
+      
     }
 }

@@ -1,123 +1,121 @@
-export default class Data{
+export default class Data {
+  api(path, method = "GET", body = null, token = null) {
+    const url = "/api/v1" + path;
 
-    api(path, method = 'GET', body= null, token = null){
+    const options = {
+      method,
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+    };
 
-         const url="/api/v1"+path
-    
-        const options={
-            method,
-            headers:{
-                'Content-Type':'application/json;charset=utf-8'
-            },
-
-    
-        };
-    
-        if(body !=null){
-            options.body = JSON.stringify(body);
-        }
-    
-        // pentru perimisuni in functie de utilizator
-        if(token){
-            options.headers['Authorization']= `Bearer ${token}`;
-        }
-    
-        return fetch( url, options);
+    if (body != null) {
+      options.body = JSON.stringify(body);
     }
 
-    async getCourses(token){
-
-        let response = await this.api("/courses", 'GET',null,token)
-
-
-
-
-        return response.json()
+    // pentru perimisuni in functie de utilizator
+    if (token) {
+      options.headers["Authorization"] = `Bearer ${token}`;
     }
 
+    return fetch(url, options);
+  }
 
-    async addCourse(course){
+  async getCourses(token) {
+    let response = await this.api("/courses", "GET", null, token);
 
-        let response = await this.api("/courses",'POST',course)
+    return response.json();
+  }
 
-        if(response.status==204){
-            return []
-        }
-    }
+  async addCourse(course) {
+    let response = await this.api("/courses", "POST", course);
 
+    return response;
+  }
 
-    async addStudent(student){
-        let response= await this.api("/users",'POST',student)
+  async addStudent(student) {
+    let response = await this.api("/users", "POST", student);
 
-        if(response.status==204){
-            return []
-        }
-    }
+    return student;
+  }
 
+  async addBlog(blog) {
+    let response = await this.api("/blogs", "POST", blog);
 
-    async deleteCourse(course){
-        let response= await this.api(`/courses/${course.id}`,'DELETE',course)
+    return blog;
+  }
 
-        return response
-    }
+  async deleteCourse(course) {
+    let response = await this.api(`/courses/${course.id}`, "DELETE", course);
 
+    return response;
+  }
 
-    async updateCourse(course){
-        let response = await this.api(`/courses/${course.id}`, 'PUT',course)
+  async updateCourse(course) {
+    let response = await this.api(`/courses/${course.id}`, "PUT", course);
 
-        return response
-    }
+    return response;
+  }
 
+  async logIn(student) {
+    let response = await this.api("/users/log", "POST", student);
 
-    async logIn (student) {
+    let data = await response.json();
 
-        let response= await this.api('/users/log', 'POST',student)
+    return data;
+  }
 
-       
-        let data = await response.json();
+  async addEnrolment(enrolment) {
+    let response = await this.api("/enrolment", "POST", enrolment);
 
-        
+    return response;
+  }
 
-        return data
-    }
+  async getEnrolment() {
+    let response = await this.api("/enrolment", "GET");
 
+    return response.json();
+  }
 
-    async addEnrolment (enrolment){
+  async deleteEnrolment(enrolment) {
+    let response = await this.api(
+      `/enrolment/${enrolment.id}`,
+      "DELETE",
+      enrolment
+    );
 
-        let response = await this.api("/enrolment", 'POST', enrolment)
+    return response;
+  }
 
-        return response
-    }
+  async getUsers() {
+    let response = await this.api(`/users`, "GET");
 
+    return response.json();
+  }
 
-    async getEnrolment(){
+  async getBlogs() {
+    let response = await this.api(`/blogs`, "GET");
 
-        let response = await this.api("/enrolment", 'GET')
+    return response.json();
+  }
 
-        return response.json()
-    }
+  async removeUser(user) {
+    let response = await this.api(`/users/${user.id}`, "DELETE", user);
+  }
 
+  async deleteBlog(blog) {
+    let response = await this.api(`/blogs/${blog.id}`, "DELETE", blog);
+  }
 
-    async deleteEnrolment(enrolment){
+  async updateBlog(blog) {
+    let response = await this.api(`/blogs/${blog.id}`, "PUT", blog);
+  }
 
-        let response = await this.api(`/enrolment/${enrolment.id}`, 'DELETE', enrolment)
+  async updateUser(user) {
+    let response = await this.api(`/users/${user.id}`, "PUT", user);
 
-        return response
-    }
-
-
-    async getUsers(){
-
-        let response= await this.api(`/users`, 'GET')
-
-        return response.json()
-    }
-
-    async removeUser(user){
-
-        let response = await this.api(`/users/${user.id}`, 'DELETE',user)
-    }
+    return response;
+  }
 }
-
 
 // {password:'22222', email: "stacy.smith@exemplu.comm"}

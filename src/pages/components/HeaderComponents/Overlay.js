@@ -1,17 +1,19 @@
-import React from 'react'
+import React from "react";
 
-import UpperHeader from './UpperHeader'
+import UpperHeader from "./UpperHeader";
 
-import Intro from './Intro'
+import Intro from "./Intro";
 
+import HeaderCards from "./headerCards";
 
-
-export default () => {
+const Overlay = () => {
   return (
-    
     <section className="overlay">
       <UpperHeader />
       <Intro />
+      <HeaderCards />
     </section>
-  )
-}
+  );
+};
+
+export default Overlay;

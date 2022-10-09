@@ -1,12 +1,23 @@
-
-
 header{
-    
     background-image: url("../../imgs/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top center;
+    background-position: center center;
     background-attachment: fixed;
-    height:70vh;
-   
+    height:30vh;
+}
+
+
+
+@media (min-width:850px){
+    header{
+        background-image: url("../../imgs/background2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        background-attachment: scroll;
+      
+        height:100vh;
+    }
+
 }

@@ -3,40 +3,38 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../../Context/Context";
 
-import Button from 'react-bootstrap/Button';
+import Cookies from "js-cookie";
 
-export default () => {
+const Nav = () => {
   const [user, setUser] = useContext(Context);
 
-  const out = () =>{
-    setUser("")
-  }
+  const out = () => {
+    Cookies.set("authentificatedUser", "");
+  };
 
   return (
     <nav>
-      {user? (
-       
+      {user ? (
         <>
           <div className="text">
             <p>Bine ai venit {user.lastName}</p>
           </div>
-            <Link className="link" to={"/LogIn"} onClick={out}>
+          <Link className="link" to={"/LogIn"} onClick={out}>
             Log out
           </Link>
-
-          </>
-         
+        </>
       ) : (
         <div>
-           <Link className="link" to={"/LogIn"}>
+          <Link className="link" to={"/LogIn"}>
             Log in
           </Link>
           <Link className="link" to={"/SignUp"}>
             Sign Up
           </Link>
-             
         </div>
       )}
     </nav>
   );
 };
+
+export default Nav;

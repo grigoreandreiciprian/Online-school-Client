@@ -1,17 +1,10 @@
-/* Error: Undefined variable.
- *   ,
- * 2 |     background-image: linear-gradient(to right, black , $primary);
- *   |                                                         ^^^^^^^^
- *   '
- *   scss\components\courseDetailHead.scss 2:57  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 2 \2502      background-image: linear-gradient(to right, black , $primary);\d\a   \2502                                                          ^^^^^^^^\a   \2575 \a   scss\\components\\courseDetailHead.scss 2:57  root stylesheet";
+.courseDetailHead {
+  background-image: linear-gradient(to right, black, #1eb2a6);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  height: 25vh;
 }
+
+/*# sourceMappingURL=courseDetailHead.css.map */

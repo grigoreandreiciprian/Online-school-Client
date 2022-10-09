@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
-import UpdateFormMain from './UpdateFormMain'
-export default () => {
+import UpdateFormMain from "./UpdateFormMain";
+const UpdateForm = () => {
   return (
-
     <section className="form">
-            <UpdateFormMain />   
+      <UpdateFormMain />
     </section>
-    
-  )
-}
+  );
+};
+
+export default UpdateForm;

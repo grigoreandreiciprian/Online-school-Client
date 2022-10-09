@@ -1,0 +1,109 @@
+.details{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // background-color: black;
+
+   
+
+   .detail{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding: 20px;
+    // background-color: gray;
+   }
+
+   .detail h1{
+    text-align: center;
+   }
+
+   .detail p{
+    text-align: center;
+   }
+
+
+   .creator{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center
+    
+   }
+
+   .creator img{
+    width: 15%;
+    padding: 10px;
+   }
+
+   .rating{
+    padding: 20px;
+   }
+
+   .rating i{
+    color: gold;
+
+   }
+
+   #gray{
+    color: rgba(128, 128, 128, .1)
+    
+   }
+
+   p{
+    padding: 10px;
+   }
+
+   .btn{
+    padding:10px 20px;
+    width:50%;
+    font-size: 23px;
+    font-weight: bolder;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    color: white;
+    // background-color: green;
+}
+
+.cancel{
+    background-color: royalblue;
+    color: white;
+}
+
+.del{
+    background-color: red;
+}
+
+.update{
+    background-color: green;
+}
+
+.enroll{
+    background-color: green;
+}
+
+.unroll{
+    background-color: red;
+}
+
+.btn:hover{
+   cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    width: 50%;
+
+}
+}

@@ -1,23 +1,25 @@
-import React from 'react'
+import React from "react";
 
-export default () => {
+const FooterQuestions = () => {
   return (
     <div className="questions">
-    <h1>Have questions ? </h1>
-    <div className="question">
+      <h1>Have questions ? </h1>
+      <div className="question">
         <i className="fa-solid fa-map"></i>
         <p>203 Fake St. Mountain View, San Francisco, California, USA</p>
-    </div>
+      </div>
 
-    <div className="question">
+      <div className="question">
         <i className="fa-solid fa-phone"></i>
         <p>+2 392 3929 210</p>
-    </div>
+      </div>
 
-    <div className="question">
+      <div className="question">
         <i className="fa-solid fa-envelope"></i>
         <p>championsAcademy@exemplu.com</p>
+      </div>
     </div>
-</div>
-  )
-}
+  );
+};
+
+export default FooterQuestions;

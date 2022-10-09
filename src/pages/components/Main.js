@@ -1,69 +1,30 @@
-import React, { useContext } from 'react'
+import CoursesBox from "./MainComponents/CoursesBox";
 
-import CoursesBox from './MainComponents/CoursesBox'
+import StatsMain from "./MainComponents/StatsMain";
 
-import Data from '../../Api'
+import StatisticsMain from "./MainComponents/StatisticsComponents/StatisticsMain";
 
-import StatsMain from './MainComponents/StatsMain'
+import BenefitsMain from "./MainComponents/BenefitsComponents/BenefitsMain";
 
-import Filter from './MainComponents/Filter'
+import BlogMain from "./MainComponents/BlogComponents/BlogMain";
 
-import StatisticsMain from './MainComponents/StatisticsComponents/StatisticsMain'
-
-
-
-import { useState, useEffect } from 'react'
-import { Context } from '../../Context/Context'
-
-import {useNavigate} from "react-router-dom"
-
-export default () =>{
-
-   let navigate= useNavigate()
-
-    const [courses,setCourses]= useState([])
-
-    const [user,setUser]= useContext(Context)
-
-
-
-
-   //  let getAll= async () =>{
-
-   //      try{
-
-   //         let data= new Data()
-
-   //         let course= await data.getCourses()
-
-   //         setCourses(course)
-
-   //      }catch(e){
-         
-   //       throw new Error(e)
-
-   //      }
-   //  }
-
-   // useEffect(()=>{
-
-   //  getAll()
-
-   // },[])
-
+const Main = () => {
   return (
-     <>
-     <main>
-     <section className="coursesBox">
+    <>
+      <main>
+        <StatsMain />
+        <BenefitsMain />
 
-       <h1>Browse Our Online Courses</h1>
-        <CoursesBox />
+        <section className="coursesBox">
+          <h1>Browse Our Online Courses</h1>
+          <CoursesBox />
+        </section>
+        <StatisticsMain />
 
-      </section>
-
-      <StatsMain />
-      <StatisticsMain />
+        <BlogMain />
       </main>
-     </>
-  )
-}
+    </>
+  );
+};
+
+export default Main;

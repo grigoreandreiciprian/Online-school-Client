@@ -1,0 +1,83 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.details .detail {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  padding: 20px;
+}
+.details .detail h1 {
+  text-align: center;
+}
+.details .detail p {
+  text-align: center;
+}
+.details .creator {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.details .creator img {
+  width: 15%;
+  padding: 10px;
+}
+.details .rating {
+  padding: 20px;
+}
+.details .rating i {
+  color: gold;
+}
+.details #gray {
+  color: rgba(128, 128, 128, 0.1);
+}
+.details p {
+  padding: 10px;
+}
+.details .btn {
+  padding: 10px 20px;
+  width: 50%;
+  font-size: 23px;
+  font-weight: bolder;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  color: white;
+}
+.details .cancel {
+  background-color: royalblue;
+  color: white;
+}
+.details .del {
+  background-color: red;
+}
+.details .update {
+  background-color: green;
+}
+.details .enroll {
+  background-color: green;
+}
+.details .unroll {
+  background-color: red;
+}
+.details .btn:hover {
+  cursor: pointer;
+}
+.details .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  width: 50%;
+}
+
+/*# sourceMappingURL=Detaiils.css.map */

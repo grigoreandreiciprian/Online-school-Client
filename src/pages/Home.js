@@ -1,43 +1,28 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect } from "react";
 
-import Header from './components/Header'
+import Header from "./components/Header";
 
-import Main from './components/Main'
+import Main from "./components/Main";
+import { useNavigate } from "react-router-dom";
 
+import Footer from "./components/Footer";
 
+import { useSelector } from "react-redux";
+import { Context } from "../Context/Context";
+import Cookies from "js-cookie";
 
-import _header from "../scss/layout/_header.scss"
-import { Context } from '../Context/Context'
+const Home = () => {
+  const [user, setUser] = useContext(Context);
 
-import {useNavigate} from "react-router-dom"
+  let navigate = useNavigate();
 
-import Footer from './components/Footer'
-
-export default  () => {
-
-  const [user,setUser] = useContext(Context)
-
-  let navigate= useNavigate()
-    
-  useEffect(()=>{
-    
-    if(user){
-      navigate("/")
-    }else{
-      navigate("/LogIn")
-    }
-  },[])
-   const  acess = () =>{
-    setUser("")
-   }
   return (
     <>
-   <Header  />
-    <Main />
-    <Footer />
+      <Header />
+      <Main />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-
-
+export default Home;

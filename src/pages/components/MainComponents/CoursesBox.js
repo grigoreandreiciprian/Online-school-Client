@@ -6,85 +6,104 @@ import { Link, useNavigate } from "react-router-dom";
 import Data from "../../../Api";
 import { Context } from "../../../Context/Context";
 
+import { useDispatch, useSelector } from "react-redux";
+
 import Pagination from "react-bootstrap/Pagination";
-
-
 
 import Filter from "./Filter";
 
-export default () => {
+const CourseBox = () => {
   const navigate = useNavigate();
 
+  // const logedUser = useSelector((state) => state.logedUser.user);
 
   const [user, setUser] = useContext(Context);
 
   const [createdAt, setCreated] = useState("");
 
-  const [courses, setCourses] = useState([]) ;
+  const [courses, setCourses] = useState([]);
 
   const [filter, setFilterValue] = useState("");
 
-  const [filteredCourses, setFilteredCourses] = useState([])
+  const [filteredCourses, setFilteredCourses] = useState([]);
 
-  let getAll= async () =>{
+  const [paginatioCourses, setPaginationCourses] = useState([]);
 
-    try{
+  const [newCourse, setNew] = useState([]);
 
-       let data= new Data()
+  useEffect(() => {
+    getAll();
+    pagination(1);
+    getCurrentTimestamp();
+  }, []);
 
-       let course= await data.getCourses()
+  useEffect(() => {
+    filtering();
+  }, [filter]);
 
-       setCourses(course)
+  let getAll = async () => {
+    try {
+      let data = new Data();
 
-    }catch(e){
-     
-     throw new Error(e)
+      let course = await data.getCourses();
 
+      setCourses(course);
+    } catch (e) {
+      throw new Error(e);
     }
-}
+  };
 
-useEffect(()=>{
-
-getAll()
-
-},[])
-
-  
- 
   const add = () => {
     navigate("/add");
   };
 
-  let active = 1;
-  let items = [];
+  let paginationButtons = () => {
+    let active = 1;
+    let items = [];
+    let total = 0;
 
-  for (let number = 1; number <= 3; number++) {
-    items.push(
-      <Pagination.Item key={number} active={number === active} onClick={()=>{pagination(number)}}>
-        {number}
-      </Pagination.Item>
-    );
-  }
-
-  //todo: 
-
-  // functie ce primeste ca parametru numarul paginii
-//[1,2,3,4,5,6,7,8.9,10,11,12,13,14,15];
-
-  let pagination=(number)=>{
-
-    let cursuri=[...courses];
-
-    let nou=[];
-    for(let i=2*(number-1)+1;i<=2*number&&i<cursuri.length;i++){
-
-       nou.push(cursuri[i]);
+    if (filteredCourses.length > 0) {
+      total = Math.floor(filteredCourses.length / 3) + 1;
+    } else {
+      total = Math.floor(courses.length / 3) + 1;
     }
 
-    console.log(nou);
-    setCourses(nou);
-  }
+    for (let number = 1; number <= total; number++) {
+      items.push(
+        <Pagination.Item
+          key={number}
+          active={number == active}
+          onClick={() => {
+            pagination(number);
+          }}
+        >
+          {number}
+        </Pagination.Item>
+      );
+    }
 
+    return items;
+  };
+
+  let pagination = async (number) => {
+    try {
+      let data = new Data();
+
+      let cursuri = await data.getCourses();
+
+      let nou = [];
+      for (
+        let i = 3 * (number - 1);
+        i < 3 * number && i < cursuri.length;
+        i++
+      ) {
+        nou.push(cursuri[i]);
+      }
+      setPaginationCourses(nou);
+    } catch (e) {
+      throw new Error(e);
+    }
+  };
 
   const delCourse = async (id) => {
     try {
@@ -93,10 +112,6 @@ getAll()
       let courses = await data.getCourses();
 
       let course = courses.filter((e) => e.id == id);
-
-      let newCourses = courses.filter((e) => e.id != id);
-
-      setCourses(newCourses);
 
       await data.deleteCourse(course[0]);
     } catch (e) {
@@ -125,11 +140,6 @@ getAll()
     setFilterValue(filter);
   };
 
-  useEffect(() => {
-    getCurrentTimestamp();
-   
-  });
-
   const enrolment = async (User_id, course_id) => {
     try {
       let data = new Data();
@@ -144,49 +154,34 @@ getAll()
 
   const filtering = () => {
     if (filter == "all") {
-      getAll()
-      setFilteredCourses([])
+      pagination(1);
+      setFilteredCourses([]);
     } else {
       let filtered = courses.filter((e) => e.category == filter);
-      setFilteredCourses(filtered);       
+      setFilteredCourses(filtered);
     }
-
-
   };
 
-  const toStats = () => {
-    navigate("/Statistics");
-  };
-
-
-  const returnAll = () =>{
-      return (
-       courses.map(e =>{
-
-        <Course
-        course={e}
-        delCourse={delCourse}
-        toUpdate={toUpdate}
-        enrolment={enrolment}
-        toDetails={toDetails}
-        key={e.id}
-      />
-       })                    
-    
-
-
-    );
-
-  }
   return (
     <>
       <Filter handleChanger={handleChanger} filtering={filtering} />
 
-
       <section className="courses">
-      {
-            courses.length > 0 ? (   
-            courses.map((e) => {
+        {filteredCourses.length > 0 ? (
+          filteredCourses.map((e) => {
+            return (
+              <Course
+                course={e}
+                delCourse={delCourse}
+                toUpdate={toUpdate}
+                enrolment={enrolment}
+                toDetails={toDetails}
+                key={e.id}
+              />
+            );
+          })
+        ) : paginatioCourses.length > 0 ? (
+          paginatioCourses.map((e) => {
             return (
               <Course
                 course={e}
@@ -203,10 +198,6 @@ getAll()
             We dont have courses avalabile at the moment , plase come back later
           </h1>
         )}
-  
-
-     
-            
 
         {(() => {
           if (user) {
@@ -223,30 +214,10 @@ getAll()
         <></>
       </section>
       <div className="pagination">
-           <Pagination>{items}</Pagination>
+        <Pagination>{paginationButtons()}</Pagination>
       </div>
     </>
   );
 };
 
-
-
-        
-  // courses.length > 0 ? (   
-  //   courses.map((e) => {
-  //     return (
-  //       <Course
-  //         course={e}
-  //         delCourse={delCourse}
-  //         toUpdate={toUpdate}
-  //         enrolment={enrolment}
-  //         toDetails={toDetails}
-  //         key={e.id}
-  //       />
-  //     );
-  //   })
-  // ) : (
-  //   <h1>
-  //     We dont have courses avalabile at the moment , plase come back later
-  //   </h1>
-  // )}
+export default CourseBox;

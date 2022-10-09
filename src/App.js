@@ -1,29 +1,30 @@
+import React from "react";
 
-import React from 'react';
+import Home from "./pages/Home";
 
-import Home from './pages/Home';
+import Add from "./pages/Add";
 
-import Add from './pages/Add';
+import CourseDetails from "./pages/CourseDetails";
 
-import CourseDetails from './pages/CourseDetails';
+import Update from "./pages/Update";
 
-import Update from './pages/Update';
+import SignUp from "./pages/SignUp";
 
-import SignUp from './pages/SignUp';
+import LogIn from "./pages/LogIn";
 
-import LogIn from './pages/LogIn';
+import UserProvider from "./Context/Context";
 
-import Statistics from './pages/Statistics';
+import AddBlog from "./pages/AddBlog";
 
-import UserProvider from './Context/Context';
+import BlogUpdate from "./pages/BlogUpdate";
 
+import MyCourses from "./pages/MyCourses";
 
-import{
-  BrowserRouter,
-  Routes,
-  Route
+import MyAccount from "./pages/MyAccount";
 
-} from "react-router-dom"
+import AccountEdit from "./pages/AccountEdit";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -33,10 +34,15 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/add" element={<Add />}></Route>
           <Route path="/details/:courseId" element={<CourseDetails />}></Route>
-          <Route path="/update/:courseId" element={<Update />}></Route> 
+          <Route path="/update/:courseId" element={<Update />}></Route>
           <Route path="/SignUp" element={<SignUp />}></Route>
           <Route path="/LogIn" element={<LogIn />}></Route>
-          <Route path="/Statistics" element={<Statistics />}></Route>
+          <Route path="/addBlog" element={<AddBlog />}></Route>
+          <Route path="/updateBlog/:blogId" element={<BlogUpdate />}></Route>
+          <Route path="/MyCourses/:userId" element={<MyCourses />}></Route>
+          <Route path="/MyAccount/:userId" element={<MyAccount />}></Route>
+          <Route path="/EditAccout/:userId" element={<AccountEdit />}></Route>
+          <Route path="/MyCourses/:userId" element={<MyCourses />}></Route>
         </Routes>
       </UserProvider>
     </BrowserRouter>

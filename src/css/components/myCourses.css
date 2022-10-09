@@ -1,0 +1,32 @@
+.coursesBox .title {
+  text-align: center;
+}
+.coursesBox .btn {
+  padding: 10px 20px;
+  width: 20%;
+  font-size: 23px;
+  font-weight: bolder;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  color: white;
+}
+.coursesBox .cancel {
+  background-color: royalblue;
+  color: white;
+}
+.coursesBox .btn:hover {
+  cursor: pointer;
+}
+.coursesBox .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  width: 50%;
+  margin: auto;
+  padding: 30px;
+}
+
+/*# sourceMappingURL=myCourses.css.map */

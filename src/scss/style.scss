@@ -1,10 +1,7 @@
-
-
 // utilities
 @import 
 'utilities/variables',
 'utilities/mixins';
-
 
 //base
 @import 
@@ -14,24 +11,24 @@
 
 // layout
 @import 
-
 'layout/header',
 'layout/main',
 'layout/footer';
 
 //components
 @import
-// 'components/headerContent',
-'components/logIn',
-
-'components/details',
-
 'components/upperHeader.scss',
 'components/overlay.scss',
-'components/courses',
+'components/courses.scss',
 'components/addForm.scss',
-'components/footerContainer.scss',
 'components/courseDetailHead.scss',
+'components/Detaiils.scss',
+'components/footerContainer.scss',
 'components/filter.scss',
-'components/Statistics.scss',
-'components/stats.scss'
+'components/statistics.scss',
+'components/stats.scss',
+'components/benefits.scss',
+'components/blog.scss',
+'components/logInForm.scss',
+'components/myCourses.scss',
+'components/myAccount.scss'

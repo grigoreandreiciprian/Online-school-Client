@@ -1,23 +1,150 @@
 .form{
    
+    background-image: url("/imgs/formBackground.jpg");
+   background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height:100%;  
+
+    padding: 100px;
+    
+    
+    .formBody{
+        width:100%;
+        margin:auto;
+        border-radius: 20px;
+        color: white;
+        text-align: center;
+        color:black;
+        display: grid;
+        grid-template-columns: 1fr;
+        // border: 2px solid red;
+        background-color: white;
+        height: 100%;
+        
+    }
+
+    .formImage{
+        display: none;
+    }
+
+   
+
+    .formImage img{
+        width: 100%;
+        height: 100%;
+        min-width: 450px;
+    }
+
+    .input{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        width: 90%;
+        margin: auto;
+        font-size: 25px;
+    
+    }
+
+    .input label{
+        margin: 10px;
+    }
+
+    .input input{
+        width: 100%;
+        padding: 10px;
+        border: 1px solid gray;
+        text-align: center;
+    }
+
+    .btn{
+        padding:10px 20px;
+        width:50%;
+        font-size: 23px;
+        font-weight: bolder;
+        margin: 10px;
+        border-radius: 10px;
+        border: 1px solid gray;
+        color: white;
+        // background-color: green;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+        width: 80%;
+        margin: auto;
+    
+    }
+
+    .enroll{
+        background-color: green;
+    }
+
+    .cancel{
+        background-color: royalblue;
+        color: white;
+    }
+
+    .category {
+        width: 50%;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .inputs{
+        padding: 20px;
+    }
+
+}
+
+
+
+
+@media (min-width:720px) and (max-width:1000px){
+
+    .form{
+
         background-image: url("/imgs/formBackground.jpg");
-        background-repeat: no-repeat;
+       background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
         background-attachment: fixed;
-        height:130vh;  
-        width:100%;
+        height:100%;  
+
+        padding: 100px;
+
         
         
         .formBody{
-            width:50%;
-            margin: 5% auto;
-            // border: 2px solid red;
+            width:100%;
+            margin:auto;
             border-radius: 20px;
             color: white;
             text-align: center;
-            color:white;
+            color:black;
+            display: grid;
+            grid-template-columns: 1fr;
             // border: 2px solid red;
+            background-color: white;
+            height: 100%;
+            
+        }
+
+        .formImage{
+            display: none;
+        }
+
+        .formImage img{
+            width: 100%;
+            height: 100%;
+            // min-width: 450px;
         }
 
         .input{
@@ -26,8 +153,10 @@
             justify-content: center;
             align-items: center;
             padding: 25px;
-            width: 40%;
+            width: 70%;
             margin: auto;
+            font-size: 25px;
+        
         }
 
         .input label{
@@ -37,30 +166,161 @@
         .input input{
             width: 100%;
             padding: 10px;
+            font-size: 20px;
+            text-align: left;
         }
-
-        .input select{
-            width: 100%;
-            padding: 10px;
-          }
-
-
-          .category{
-            width: 40%;
-            padding:5px;
-          }
-          
 
         .btn{
             padding:10px 20px;
-            width:20%;
-            font-size: 20px;
+            width:50%;
+            font-size: 23px;
             font-weight: bolder;
-            color: $primary;
+            margin: 10px;
+            border-radius: 10px;
+            border: 1px solid gray;
+            color: white;
+            // background-color: green;
         }
-    
-        .btn:hover{
-            background-color: $primary;
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+            width: 80%;
+            margin: auto;
+        
+        }
+
+        .enroll{
+            background-color: green;
+        }
+
+        .cancel{
+            background-color: royalblue;
             color: white;
         }
+
+        .category {
+            width: 50%;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .inputs{
+            padding: 20px;
+        }
+
+    }
+
 }
+
+
+    @media (min-width:1000px){
+
+        .form{
+
+            background-image: url("/imgs/formBackground.jpg");
+           background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            height:100%;  
+    
+            padding: 100px;
+            
+            
+            .formBody{
+                width:70%;
+                margin:auto;
+                border-radius: 20px;
+                color: white;
+                text-align: center;
+                color:black;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                // border: 2px solid red;
+                background-color: white;
+                height: 100%;
+                
+            }
+
+
+            .formImage{
+                display: block;
+            }
+            
+           
+    
+            .formImage img{
+                width: 100%;
+                height: 100%;
+            }
+    
+            .input{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 25px;
+                width: 80%;
+                margin: auto;
+            }
+    
+            .input label{
+                margin: 10px;
+            }
+    
+            .input input{
+                width: 100%;
+                padding: 10px;
+                font-size: 20px;
+                text-align: left;
+            }
+    
+            .btn{
+                padding:10px 20px;
+                width:50%;
+                font-size: 23px;
+                font-weight: bolder;
+                margin: 10px;
+                border-radius: 10px;
+                border: 1px solid gray;
+                color: white;
+                // background-color: green;
+            }
+    
+            .buttons {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin-top: 1rem;
+                width: 80%;
+                margin: auto;
+            
+            }
+    
+            .enroll{
+                background-color: green;
+            }
+    
+            .cancel{
+                background-color: royalblue;
+                color: white;
+            }
+    
+            .category {
+                width: 50%;
+                text-align: center;
+                font-size: 20px;
+            }
+    
+            .inputs{
+                padding: 20px;
+            }
+    
+
+    }}
+   

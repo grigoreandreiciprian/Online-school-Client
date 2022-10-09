@@ -1,19 +1,17 @@
-.overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-  height: 100%;
-}
-.overlay h1 {
-  margin: 20px 0px;
-}
-.overlay .intro {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 35px;
-  color: white;
-  padding: 20px;
-  margin-top: 2%;
-}
+/* Error: Undefined variable.
+ *    ,
+ * 46 |         font-family: $titleFont;
+ *    |                      ^^^^^^^^^^
+ *    '
+ *   scss\components\overlay.scss 46:22  root stylesheet */
 
-/*# sourceMappingURL=overlay.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 46 \2502          font-family: $titleFont;\d\a    \2502                       ^^^^^^^^^^\a    \2575 \a   scss\\components\\overlay.scss 46:22  root stylesheet";
+}

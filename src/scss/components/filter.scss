@@ -1,30 +1,57 @@
+
+
 .filter{
 
     width: 100%;
     margin-bottom: 2%;
     
      display: flex;
-     flex-direction: row;
+     flex-direction: column;
      justify-content: center;
      align-items: center;
-     
 
-    button{
-        padding: 2px 20px;
+
+     select{
+        padding: 2px 10px;
         margin: 5px;
-        font-size: 16px;
+        font-size: 22px;
         transition: .3s all;
-      
-    }
+     }
+     
+   
+}
 
-    button:hover{
-        background-color: $primary;
-        color: white;
+
+@media (min-width:1500px){
+
+    .filter{
+
+        width: 100%;
+        margin-bottom: 2%;
         
-    }
-
-    button:focus{
-        background-color: $primary;
-        color: white;
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         align-items: center;
+         
+    
+        button{
+            padding: 2px 20px;
+            margin: 5px;
+            font-size: 16px;
+            transition: .3s all;
+          
+        }
+    
+        button:hover{
+            background-color: $primary;
+            color: white;
+            
+        }
+    
+        button:focus{
+            background-color: $primary;
+            color: white;
+        }
     }
 }
