@@ -350,10 +350,25 @@ header {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  height: 30vh;
+  height: 28vh;
 }
 
-@media (min-width: 850px) {
+@media (min-width: 420px) {
+  header {
+    height: 25vh;
+  }
+}
+@media (min-width: 720px) {
+  header {
+    background-image: url("../imgs/background2Resp.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: scroll;
+    height: 70vh;
+  }
+}
+@media (min-width: 1250px) {
   header {
     background-image: url("../imgs/background2.jpg");
     background-repeat: no-repeat;
@@ -363,23 +378,37 @@ header {
     height: 100vh;
   }
 }
-main {
-  background-color: #f5f7f8;
-}
 main h1 {
   text-align: center;
   margin: 50px;
+}
+main .buttonsCourse {
+  width: 70%;
+  margin: 2% auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 main .pagination {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+main .courseBtn {
+  padding: 5px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: bolder;
+  color: #50c878;
+  max-width: 180px;
 }
 
 footer {
   background-color: #eee;
-  padding: 20px;
+  padding: 10px;
 }
 
 .upperHeader {
@@ -391,11 +420,11 @@ footer {
   color: white;
 }
 .upperHeader h2 {
-  color: #1EB2A6;
+  color: white;
   font-weight: bolder;
   text-align: center;
-  width: 100%;
-  font-size: 25px;
+  width: 80%;
+  font-size: 22px;
 }
 .upperHeader .logo {
   display: flex;
@@ -406,7 +435,7 @@ footer {
   margin-right: 2rem;
 }
 .upperHeader .logo img {
-  width: 50%;
+  width: 200px;
   margin-bottom: 10px;
 }
 .upperHeader .logoLink {
@@ -431,18 +460,24 @@ footer {
 .upperHeader .sign {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin-right: 2rem;
+  width: 100%;
+  margin: auto;
+}
+.upperHeader .sign h2 {
+  width: 50%;
+  font-size: 20px;
 }
 .upperHeader .sign a {
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   padding: 10px;
   color: white;
 }
 .upperHeader .sign i {
-  font-size: 40px;
+  font-size: 25px;
   transition: 0.3s all;
 }
 .upperHeader .sign i:hover {
@@ -460,7 +495,12 @@ footer {
   cursor: pointer;
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 625px) {
+  .upperHeader .sign {
+    width: 50%;
+  }
+}
+@media (min-width: 1600px) {
   .upperHeader {
     display: flex;
     flex-direction: row;
@@ -483,7 +523,7 @@ footer {
     width: 20%;
   }
   .upperHeader .logo img {
-    width: 60%;
+    width: 70%;
     margin-bottom: 10px;
   }
   .upperHeader .content {
@@ -495,16 +535,16 @@ footer {
   .upperHeader .contact {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 50%;
+    width: 100%;
   }
   .upperHeader .contactBox {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   .upperHeader .contactBox i {
-    font-size: 35px;
+    font-size: 30px;
     padding: 20px;
   }
   .upperHeader .social {
@@ -514,7 +554,7 @@ footer {
     align-items: center;
   }
   .upperHeader .social i {
-    font-size: 25px;
+    font-size: 20px;
     padding: 10px;
     border-radius: 100px;
     background-color: white;
@@ -532,6 +572,12 @@ footer {
     justify-content: center;
     align-items: center;
   }
+  .upperHeader .sign i {
+    font-size: 35px;
+  }
+  .upperHeader .sign h2 {
+    font-size: 25px;
+  }
   .upperHeader .sign a {
     text-decoration: none;
     font-size: 25px;
@@ -540,6 +586,7 @@ footer {
   }
 }
 .overlay {
+  background-color: rgba(0, 0, 0, 0.4);
   height: 100%;
 }
 .overlay h1 {
@@ -613,8 +660,9 @@ footer {
   color: gray;
 }
 
-@media (min-width: 850px) and (max-width: 1250px) {
+@media (min-width: 720px) and (max-width: 1250px) {
   .overlay {
+    background-color: rgba(0, 0, 0, 0);
     height: 100%;
   }
   .overlay h1 {
@@ -628,39 +676,41 @@ footer {
   }
   .overlay .introImg {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    width: 60%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 70%;
+  }
+  .overlay .introImg img {
+    width: 100%;
+    max-width: 400px;
   }
   .overlay .introText {
     color: white;
     font-size: 20px;
     width: 100%;
     display: flex;
-    text-align: center;
+    margin: 10% auto;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
   .overlay .textBox {
-    width: 50%;
+    width: 80%;
   }
   .overlay .textBox h1 {
     font-family: "Playfair Display", serif;
-    font-size: 25px;
+    font-size: 35px;
     font-weight: bolder;
-  }
-  .overlay .textBox p {
-    display: none;
   }
   .overlay .headerCards {
     display: flex;
-    flex-direction: row;
-    width: 70%;
+    flex-direction: column;
+    width: 80%;
     padding: 40px;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     padding: 20px 0px;
+    display: none;
   }
   .overlay .headerCard {
     display: flex;
@@ -668,9 +718,9 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-right: 1px solid rgba(128, 128, 128, 0.5);
     font-size: 15px;
-    padding: 20px;
+    width: 60%;
+    margin: auto;
   }
   .overlay .cardTitle {
     display: flex;
@@ -690,6 +740,7 @@ footer {
 }
 @media (min-width: 1250px) and (max-width: 1500px) {
   .overlay {
+    background-color: rgba(0, 0, 0, 0);
     height: 100%;
   }
   .overlay h1 {
@@ -698,41 +749,41 @@ footer {
   .overlay .intro {
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 100%;
     margin: auto;
   }
   .overlay .introImg {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    width: 60%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 70%;
+  }
+  .overlay .introImg img {
+    width: 100%;
+    max-width: 400px;
   }
   .overlay .introText {
     color: white;
     font-size: 20px;
     width: 100%;
     display: flex;
-    text-align: center;
+    margin: 10% auto;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
   .overlay .textBox {
-    width: 50%;
+    width: 80%;
   }
   .overlay .textBox h1 {
     font-family: "Playfair Display", serif;
-    font-size: 45px;
+    font-size: 35px;
     font-weight: bolder;
-  }
-  .overlay .textBox p {
-    display: none;
   }
   .overlay .headerCards {
     display: flex;
     flex-direction: row;
-    width: 50%;
-    padding: 40px;
+    width: 55%;
     justify-content: center;
     align-items: center;
   }
@@ -759,6 +810,7 @@ footer {
 }
 @media (min-width: 1500px) {
   .overlay {
+    background-color: rgba(0, 0, 0, 0);
     height: 100%;
   }
   .overlay h1 {
@@ -826,7 +878,7 @@ footer {
 .courses {
   display: grid;
   grid-template-columns: 1fr;
-  width: 100%;
+  width: 80%;
   margin: auto;
 }
 .courses .course {
@@ -834,7 +886,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding: 30px;
   background-color: white;
   color: black;
   border: 2px solid gray;
@@ -847,6 +899,10 @@ footer {
   font-size: 30px;
   text-align: center;
   margin: 0px;
+}
+.courses .course h2 {
+  font-size: 20px;
+  font-weight: bold;
 }
 .courses .rating {
   display: flex;
@@ -864,7 +920,7 @@ footer {
   color: gray;
 }
 .courses .icon {
-  width: 15%;
+  width: 30%;
   border-radius: 100px;
   margin: 10px;
 }
@@ -872,7 +928,8 @@ footer {
   padding: 10px;
   margin: 10px;
   font-size: 16px;
-  background-color: rgba(128, 128, 128, 0.3);
+  background-color: rgba(3, 1, 1, 0.7);
+  font-weight: bolder;
   color: #50c878;
 }
 .courses p {
@@ -880,7 +937,7 @@ footer {
   font-weight: bold;
 }
 .courses .enroll {
-  padding: 10px 20px;
+  padding: 5px 20px;
   width: 90%;
   font-size: 20px;
   font-weight: bolder;
@@ -895,7 +952,7 @@ footer {
   cursor: pointer;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 720px) and (max-width: 1250px) {
   .courses {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -903,11 +960,11 @@ footer {
     margin: auto;
   }
 }
-@media (min-width: 1500px) {
+@media (min-width: 1250px) {
   .courses {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    width: 70%;
+    width: 80%;
     margin: auto;
   }
   .courses .course {
@@ -941,7 +998,7 @@ footer {
     color: gray;
   }
   .courses .icon {
-    width: 15%;
+    width: 20%;
     border-radius: 100px;
     margin: 10px;
   }
@@ -1240,7 +1297,7 @@ footer {
   align-items: center;
 }
 .details .detail {
-  width: 50%;
+  width: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -1249,11 +1306,18 @@ footer {
   font-size: 20px;
   padding: 20px;
 }
+.details .detail h3 {
+  text-align: center;
+}
 .details .detail h1 {
   text-align: center;
 }
 .details .detail p {
   text-align: center;
+  margin: 0px;
+}
+.details .rating {
+  margin: 0px;
 }
 .details .creator {
   display: flex;
@@ -1264,6 +1328,7 @@ footer {
 .details .creator img {
   width: 15%;
   padding: 10px;
+  border-radius: 100px;
 }
 .details .rating {
   padding: 20px;
@@ -1279,7 +1344,8 @@ footer {
 }
 .details .btn {
   padding: 10px 20px;
-  width: 50%;
+  max-width: 200px;
+  width: 100%;
   font-size: 23px;
   font-weight: bolder;
   margin: 10px;
@@ -1315,8 +1381,20 @@ footer {
   width: 50%;
 }
 
+@media (min-width: 720px) {
+  .details .detail p {
+    text-align: center;
+    margin: 0px;
+    width: 50%;
+  }
+  .details .creator img {
+    width: 25%;
+    padding: 10px;
+    border-radius: 100px;
+  }
+}
 .footerContainer {
-  width: 80%;
+  width: 90%;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -1329,11 +1407,10 @@ footer {
   padding: 20px 0px;
 }
 .footerContainer .footerLogo img {
-  width: 40%;
+  width: 50%;
 }
 .footerContainer .footerLogo p {
   font-size: 17px;
-  padding: 20px 0px;
   width: 80%;
 }
 .footerContainer .social {
@@ -1356,7 +1433,7 @@ footer {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 80%;
+  width: 100%;
 }
 .footerContainer .links {
   display: flex;
@@ -1386,11 +1463,14 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-start;
-  padding: 0px 0px 20px 0px;
+  align-items: center;
 }
 .footerContainer .footerContent img {
   width: 15%;
+  max-width: 60px;
+}
+.footerContainer .footerContent p {
+  margin: 0px;
 }
 .footerContainer .date {
   display: flex;
@@ -1419,10 +1499,13 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-start;
-  margin: 5% 0px;
+  align-items: center;
+  margin: 2% 0px;
   font-size: 20px;
   width: 100%;
+}
+.footerContainer .question p {
+  margin: 0px;
 }
 .footerContainer .question i {
   color: #50c878;
@@ -1430,7 +1513,7 @@ footer {
   padding: 0px 20px;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 845px) {
   .footerContainer .footerPosts {
     display: flex;
     flex-direction: column;
@@ -1442,11 +1525,11 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     padding: 0px 0px 20px 0px;
   }
 }
-@media (min-width: 1000px) {
+@media (min-width: 845px) {
   .footerContainer {
     width: 80%;
     margin: auto;
@@ -1454,7 +1537,7 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media (min-width: 1500px) {
+@media (min-width: 1700px) {
   .footerContainer {
     width: 80%;
     margin: auto;
@@ -1493,7 +1576,7 @@ footer {
   .footerContainer .footerNav {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
   }
   .footerContainer .links {
@@ -1517,7 +1600,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
   .footerContainer .footerContent {
     display: flex;
@@ -1549,7 +1632,7 @@ footer {
   .footerContainer .questions {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     padding: 0px 20px;
   }
@@ -1606,9 +1689,6 @@ footer {
     color: white;
   }
 }
-.statistics {
-  padding: 30px;
-}
 .statistics h1 {
   text-align: center;
   font-size: 30px;
@@ -1617,36 +1697,40 @@ footer {
 .statistics .teachers {
   display: grid;
   grid-template-columns: 1fr;
+  grid-gap: 40px;
   width: 80%;
   margin: 5% auto;
-  grid-gap: 40px;
 }
 .statistics .teacher {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 20px;
   position: relative;
-  max-width: 480px;
+  margin: 2% auto;
   color: black;
   border: 2px solid gray;
   transition: 0.3s all;
+  width: 100%;
+  max-width: 370px;
 }
 .statistics .teacher:hover {
   background-color: #50c878;
   color: white;
 }
 .statistics .teacher h1 {
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
   margin: 0px;
+  font-weight: bolder;
 }
 .statistics .teacher p {
   margin: 10px;
 }
 .statistics .teacher img {
   width: 100%;
+  padding-bottom: 20px;
+  height: 350px;
 }
 .statistics .rating i {
   color: gold;
@@ -1675,7 +1759,7 @@ footer {
   left: 2%;
   top: 2%;
   width: 100%;
-  height: 85%;
+  height: 100%;
   overflow: hidden;
   opacity: 0;
   transition: 0.3s all;
@@ -1685,8 +1769,8 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  height: 60%;
-  margin-left: 1rem;
+  height: 50%;
+  margin-left: 10px;
   color: red;
   opacity: 1;
 }
@@ -1696,7 +1780,7 @@ footer {
 .statistics .overlayBox i {
   margin: 8px;
   padding: 12px;
-  font-size: 20px;
+  font-size: 15px;
   border-radius: 100px;
   background-color: black;
   color: white;
@@ -1711,12 +1795,12 @@ footer {
   .statistics .teachers {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 90%;
+    width: 80%;
     margin: 5% auto;
     grid-gap: 40px;
   }
 }
-@media (min-width: 1500px) {
+@media (min-width: 1250px) {
   .statistics {
     padding: 30px;
   }
@@ -1727,10 +1811,9 @@ footer {
   }
   .statistics .teachers {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 90%;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 70%;
     margin: 5% auto;
-    grid-gap: 40px;
   }
   .statistics .teacher {
     display: flex;
@@ -1833,7 +1916,6 @@ footer {
   background-size: cover;
   width: 100%;
   height: 100%;
-  margin-top: 5%;
 }
 .Schoolstats .StatsShadow {
   background-color: rgba(0, 0, 0, 0.2);
@@ -1866,16 +1948,15 @@ footer {
 }
 
 @media (min-width: 720px) and (max-width: 1500px) {
-  .Schoolstats .stats {
+  .Schoolstats .StatsShadow {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
 }
 @media (min-width: 1500px) {
   .Schoolstats {
-    background-image: url("../imgs/writing.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1945,10 +2026,10 @@ footer {
   border: 1px solid gray;
   border-radius: 20px;
   margin: 2rem 0px;
-  padding: 20px;
   transition: 0.3s all;
   text-align: left;
-  width: 100%;
+  width: 90%;
+  margin: 5% auto;
 }
 .benefits .benefitCard:hover {
   background-color: #50c878;
@@ -1965,13 +2046,28 @@ footer {
 }
 .benefits .benefitText p {
   line-height: 30px;
-  font-size: 22px;
+  font-size: 18px;
   margin-top: 1rem;
 }
 .benefits .benefitsLeft {
   display: none;
 }
 
+@media (min-width: 1000px) {
+  .benefits .benefitCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin: 2rem 0px;
+    transition: 0.3s all;
+    text-align: left;
+    width: 100%;
+    margin: 5% auto;
+  }
+}
 @media (min-width: 1500px) {
   .benefits {
     width: 100%;
@@ -2041,9 +2137,6 @@ footer {
     opacity: 1;
   }
 }
-.blog {
-  padding: 20px;
-}
 .blog h3 {
   color: #50c878;
   text-align: center;
@@ -2058,10 +2151,9 @@ footer {
 .blog .blogPosts {
   display: grid;
   grid-template-columns: 1fr;
-  width: 90%;
-  margin: 2% auto;
+  width: 60%;
+  margin: 5% auto;
   grid-gap: 40px;
-  padding: 10px;
 }
 .blog .blogPost {
   display: flex;
@@ -2070,6 +2162,7 @@ footer {
   align-items: center;
   padding-bottom: 15px;
   max-width: 380px;
+  width: 100%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: all 0.1s ease-in;
   color: black;
@@ -2083,6 +2176,7 @@ footer {
 }
 .blog .blogPost img {
   width: 100%;
+  height: 300px;
 }
 .blog .blogPost h1 {
   text-align: left;
@@ -2100,9 +2194,13 @@ footer {
   align-items: center;
   padding: 10px 20px;
 }
+.blog .postBy p {
+  padding: 0px;
+  margin: 0px;
+}
 .blog i {
-  padding: 0px 10px;
-  font-size: 20px;
+  font-size: 25px;
+  margin-right: 1rem;
   color: #50c878;
 }
 .blog .datePosted {
@@ -2110,7 +2208,11 @@ footer {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 10px;
+}
+.blog .datePosted p {
+  padding: 0px;
+  margin: 0px;
 }
 .blog .blogTitle:hover {
   color: #50c878;
@@ -2121,7 +2223,7 @@ footer {
   .blog .blogPosts {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 70%;
+    width: 80%;
     margin: 2% auto;
     padding: 10px;
   }
@@ -2140,9 +2242,8 @@ footer {
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   }
 }
-@media (min-width: 1500px) {
+@media (min-width: 1250px) {
   .blog {
-    background-color: #f5f7f8;
     padding: 20px;
   }
   .blog h3 {
@@ -2310,8 +2411,7 @@ footer {
   opacity: 0.8;
   font-size: 15px;
 }
-.formLog .logSign h4 {
-  border-bottom: 1px solid gray;
+.formLog h4 {
   margin-left: 5px;
   font-size: 20px;
 }
@@ -2385,13 +2485,14 @@ footer {
 }
 .coursesBox .btn {
   padding: 10px 20px;
-  width: 20%;
+  width: 100%;
   font-size: 23px;
   font-weight: bolder;
   margin: 10px;
   border-radius: 10px;
   border: 1px solid gray;
   color: white;
+  max-width: 200px;
 }
 .coursesBox .cancel {
   background-color: royalblue;
@@ -2417,37 +2518,38 @@ footer {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  height: 100vh;
-  padding: 100px;
+  height: 105vh;
 }
 .formAcc .profilePic img {
-  width: 50%;
+  width: 80%;
   border-radius: 200px;
+  max-width: 290px;
 }
 .formAcc .AccformBody {
-  width: 25%;
-  min-width: 500px;
+  width: 100%;
   margin: auto;
-  border-radius: 20px;
   color: white;
   text-align: center;
   color: black;
   display: grid;
   grid-template-columns: 1fr;
   background-color: white;
-  height: 90%;
+  height: 100%;
   padding-top: 50px;
 }
 .formAcc .name {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   width: 80%;
   margin: auto;
 }
+.formAcc .nameBox {
+  margin: 2%;
+}
 .formAcc .name h1 {
-  font-size: 20px;
+  font-size: 25px;
 }
 .formAcc .profileBox {
   display: flex;
@@ -2489,7 +2591,7 @@ footer {
 }
 .formAcc .buttons {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
@@ -2519,7 +2621,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   width: 80%;
   margin: auto;
 }
@@ -2535,9 +2637,32 @@ footer {
   margin: auto;
 }
 
-@media (min-width: 450px) and (max-width: 600px) {
-  .formLog .AccformBody {
-    min-width: 350px;
+@media (min-width: 720px) {
+  .formAcc {
+    padding: 100px;
+  }
+  .formAcc .buttons {
+    display: flex;
+    flex-direction: row;
+  }
+  .formAcc .btn {
+    padding: 8px;
+    width: 50%;
+    font-size: 18px;
+    font-weight: bolder;
+    border-radius: 10px;
+    border: 1px solid gray;
+    color: white;
+  }
+  .formAcc .AccformBody {
+    max-width: 600px;
+    height: 100%;
+  }
+}
+@media (min-width: 1700px) {
+  .formAcc .AccformBody {
+    max-width: 50px;
+    height: 100%;
   }
 }
 

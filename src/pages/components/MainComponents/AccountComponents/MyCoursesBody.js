@@ -6,6 +6,7 @@ import profile from "../../../../imgs/profile.png";
 
 import Rating from "../Rating";
 
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const MyCoursesBody = ({ course }) => {
@@ -14,6 +15,19 @@ const MyCoursesBody = ({ course }) => {
   const toDetails = (id) => {
     navigate(`/details/${id}`);
   };
+  const [coursePic, setPic] = useState("");
+
+  function toBase64(arr) {
+    return btoa(
+      arr.reduce((data, byte) => data + String.fromCharCode(byte), "")
+    );
+  }
+
+  useEffect(() => {
+    if (course.creatorPicture != null && course.creatorPicture != 0) {
+      setPic(`data:image/png;base64,${toBase64(course.creatorPicture.data)}`);
+    }
+  }, [course]);
 
   return (
     <div className="course">
@@ -28,8 +42,10 @@ const MyCoursesBody = ({ course }) => {
       <Rating />
 
       <div className="creator">
-        <img src={profile} className="icon"></img>
-        <h2>by {course.createdBy}</h2>
+        <img src={coursePic} className="icon" alt=""></img>
+        <h2>
+          by {course.creatorFirstName} {course.creatorLastName}
+        </h2>
       </div>
 
       <p>

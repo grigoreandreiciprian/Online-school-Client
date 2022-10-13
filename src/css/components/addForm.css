@@ -1,5 +1,5 @@
 .form {
-  background-image: url("/imgs/formBackground.jpg");
+  background-image: url("../imgs/formBackground.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -83,7 +83,7 @@
 
 @media (min-width: 720px) and (max-width: 1000px) {
   .form {
-    background-image: url("/imgs/formBackground.jpg");
+    background-image: url("../imgs/formBackground.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -166,7 +166,7 @@
 }
 @media (min-width: 1000px) {
   .form {
-    background-image: url("/imgs/formBackground.jpg");
+    background-image: url("../imgs/formBackground.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

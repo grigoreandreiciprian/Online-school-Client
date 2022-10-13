@@ -14,8 +14,6 @@ const Teacher = ({ teacher, remove, reload }) => {
 
   const distpatch = useDispatch();
 
-  const logedUser = useSelector((state) => state.logedUser.user);
-
   const [courses, setCourses] = useState(0);
 
   const [imageUrl, setImage] = useState("null");
@@ -85,8 +83,8 @@ const Teacher = ({ teacher, remove, reload }) => {
 
       <div className="buttons">
         {(() => {
-          if (logedUser) {
-            if (logedUser.role_id == 3) {
+          if (user) {
+            if (user.role_id == 3) {
               return (
                 <button
                   className="fire"

@@ -10,6 +10,7 @@ import UpperHeader from "../../HeaderComponents/UpperHeader";
 
 import Data from "../../../../Api";
 import UpdateForm from "./UpdateForm";
+import { useEffect } from "react";
 
 const UpdateFormMain = () => {
   const navigate = useNavigate();
@@ -26,7 +27,21 @@ const UpdateFormMain = () => {
 
   const [perMonth, setPerMonth] = useState(0);
 
+  const [course, setCourse] = useState("");
+
   let id = useParams().courseId;
+
+  let api = new Data();
+
+  const getCourse = async () => {
+    let courses = await api.getCourses();
+    let course = courses.filter((e) => e.id == id)[0];
+    setCourse(course);
+  };
+
+  useEffect(() => {
+    getCourse();
+  }, [user]);
 
   const handlechanger = (courseName, lectures, hours, totalPrice, perMonth) => {
     setCourseName(courseName);
@@ -55,7 +70,13 @@ const UpdateFormMain = () => {
     }
   };
 
-  return <UpdateFormBody updateC={updateC} handleChanger={handlechanger} />;
+  return (
+    <UpdateFormBody
+      updateC={updateC}
+      handleChanger={handlechanger}
+      course={course}
+    />
+  );
 };
 
 export default UpdateFormMain;

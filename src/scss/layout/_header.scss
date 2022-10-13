@@ -1,17 +1,39 @@
 header{
-    background-image: url("../../imgs/background.jpg");
+    background-image: url("../imgs/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    height:30vh;
+    height:28vh;
+}
+
+
+@media(min-width:420px){
+
+    header{
+        height:25vh;
+    }
 }
 
 
 
-@media (min-width:850px){
+@media (min-width:720px){
     header{
-        background-image: url("../../imgs/background2.jpg");
+        background-image: url("../imgs/background2Resp.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        background-attachment: scroll;
+      
+        height:70vh;
+    }
+
+}
+
+
+@media (min-width:1250px){
+    header{
+        background-image: url("../imgs/background2.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: top center;

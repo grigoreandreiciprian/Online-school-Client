@@ -7,9 +7,11 @@ import Data from "../../../../Api";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "../../../../Context/Context";
 
 const MyCoursesMain = () => {
-  const user = useSelector((state) => state.logedUser.user);
+  const [user, setUser] = useContext(Context);
 
   const navigate = useNavigate();
 
@@ -51,7 +53,7 @@ const MyCoursesMain = () => {
 
   useEffect(() => {
     courses();
-  }, []);
+  }, [user]);
 
   return (
     <>

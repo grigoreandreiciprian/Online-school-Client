@@ -198,23 +198,23 @@ const CourseBox = () => {
             We dont have courses avalabile at the moment , plase come back later
           </h1>
         )}
+      </section>
 
+      <div className="buttonsCourse">
         {(() => {
           if (user) {
             if (user.role_id == 2) {
               return (
-                <button className="enroll" onClick={add}>
+                <button className="enroll courseBtn" onClick={add}>
                   Add new course
                 </button>
               );
             }
           }
         })()}
-
-        <></>
-      </section>
-      <div className="pagination">
-        <Pagination>{paginationButtons()}</Pagination>
+        <div className="pagination">
+          <Pagination>{paginationButtons()}</Pagination>
+        </div>
       </div>
     </>
   );

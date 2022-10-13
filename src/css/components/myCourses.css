@@ -3,13 +3,14 @@
 }
 .coursesBox .btn {
   padding: 10px 20px;
-  width: 20%;
+  width: 100%;
   font-size: 23px;
   font-weight: bolder;
   margin: 10px;
   border-radius: 10px;
   border: 1px solid gray;
   color: white;
+  max-width: 200px;
 }
 .coursesBox .cancel {
   background-color: royalblue;

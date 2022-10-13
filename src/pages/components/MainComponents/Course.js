@@ -6,13 +6,29 @@ import profile from "../../../imgs/profile.png";
 
 import { useSelector } from "react-redux";
 
+import { useEffect } from "react";
+
 import Rating from "./Rating";
+import { useState } from "react";
 
 const Course = ({ course, delCourse, toUpdate, toDetails }) => {
   const [user, setUser] = useContext(Context);
 
-  // const logedUser = useSelector((state) => state.logedUser.user);
   const course_id = course.id;
+
+  const [coursePic, setPic] = useState("");
+
+  function toBase64(arr) {
+    return btoa(
+      arr.reduce((data, byte) => data + String.fromCharCode(byte), "")
+    );
+  }
+
+  useEffect(() => {
+    if (course.creatorPicture != null && course.creatorPicture != 0) {
+      setPic(`data:image/png;base64,${toBase64(course.creatorPicture.data)}`);
+    }
+  }, [course]);
 
   return (
     <div className="course">
@@ -27,8 +43,10 @@ const Course = ({ course, delCourse, toUpdate, toDetails }) => {
       <Rating />
 
       <div className="creator">
-        <img src={profile} className="icon"></img>
-        <h2>by {course.createdBy}</h2>
+        <img src={coursePic} className="icon" alt=""></img>
+        <h2>
+          by {course.creatorFirstName} {course.creatorLastName}
+        </h2>
       </div>
 
       <p>

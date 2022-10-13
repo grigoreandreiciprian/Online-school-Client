@@ -9,21 +9,18 @@ import { FileUploader } from "react-drag-drop-files";
 import { useState } from "react";
 import { useEffect } from "react";
 
-import { useSelector } from "react-redux";
-
-import Cookies from "js-cookie";
 import Data from "../../../../Api";
 import { useContext } from "react";
 import { Context } from "../../../../Context/Context";
 
-const EdditAccoutBody = ({ handleChanger, updateProfile, updatePhoto }) => {
+const EdditAccoutBody = ({ handleChanger, updateProfile }) => {
   const navigate = useNavigate();
 
   const [user, setUser] = useContext(Context);
 
   const [logUser, setLogged] = useState("");
 
-  const [picture, setPicture] = useState(logUser.picture);
+  const [Userpicture, setUserPicture] = useState("");
 
   const [firstName, setFirst] = useState(logUser.firstName);
 
@@ -33,48 +30,53 @@ const EdditAccoutBody = ({ handleChanger, updateProfile, updatePhoto }) => {
 
   const [age, setAge] = useState(logUser.age);
 
+  const [buffer, setBuffer] = useState(logUser.picture);
+
+  // console.log(buffer);
+
   const fileTypes = ["JPG", "PNG", "GIF"];
   const [file, setFile] = useState(null);
 
   const api = new Data();
 
-  useEffect(() => {
-    handleChanger(firstName, lastName, email, age, picture);
-  });
-
-  useEffect(() => {
-    if (logUser.picture != null && logUser.picture != 0) {
-      setPicture(`data:image/png;base64,${toBase64(logUser.picture.data)}`);
-    }
-  }, [logUser]);
-
   const userDetails = async () => {
-    const users = await api.getUsers();
+    let users = await api.getUsers();
 
-    const logUser = users.filter((e) => e.id == user.id)[0];
+    if (typeof user == "object") {
+      let logedUser = users.filter((e) => e.id == user.id)[0];
 
-    setLogged(logUser);
+      setLogged(logedUser);
+    }
   };
 
   useEffect(() => {
     userDetails();
   }, [user]);
 
+  useEffect(() => {
+    handleChanger(firstName, lastName, email, age, buffer);
+  }, [firstName, lastName, email, age, buffer]);
+
+  useEffect(() => {
+    if (logUser.picture != null && logUser.picture != 0) {
+      setUserPicture(`data:image/png;base64,${toBase64(logUser.picture.data)}`);
+    }
+  }, [logUser]);
+
   function toBase64(arr) {
     return btoa(
       arr.reduce((data, byte) => data + String.fromCharCode(byte), "")
     );
   }
+
   const cancel = () => {
-    navigate("/");
+    navigate(`/MyAccount/${logUser.id}`);
   };
 
   const handleChange = async (file) => {
     let buufer = await file.arrayBuffer();
 
-    setFile(file);
-
-    setPicture(buufer);
+    setBuffer(buufer);
   };
 
   const onChange = (e) => {
@@ -97,8 +99,8 @@ const EdditAccoutBody = ({ handleChanger, updateProfile, updatePhoto }) => {
 
       <div className="profilePic">
         {(() => {
-          if (file !== "null" && file != 0) {
-            return <img src={file} alt="" />;
+          if (Userpicture !== "null") {
+            return <img src={Userpicture} alt="" />;
           } else {
             return <img src={defaultPicture} alt="" />;
           }

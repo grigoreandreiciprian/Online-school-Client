@@ -35,10 +35,11 @@
         border-radius: 20px;
         margin: 2rem 0px;
         // margin-right: 2rem;
-        padding: 20px;
+        // padding: 20px;
         transition: .3s all;
         text-align: left;
-        width: 100%;
+        width: 90%;
+        margin: 5% auto;
     }
 
     .benefitCard:hover{
@@ -63,7 +64,7 @@
 
     .benefitText p{
         line-height: 30px;
-        font-size: 22px;
+        font-size: 18px;
         
        
         margin-top: 1rem;
@@ -74,6 +75,30 @@
     }
 
     
+}
+
+
+@media (min-width:1000px){
+    .benefits{
+
+        .benefitCard{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            // background-color: lightgray;
+            border: 1px solid gray;
+            border-radius: 20px;
+            margin: 2rem 0px;
+            // margin-right: 2rem;
+            // padding: 20px;
+            transition: .3s all;
+            text-align: left;
+            width: 100%;
+            margin: 5% auto;
+        }
+    
+    }
 }
 
 

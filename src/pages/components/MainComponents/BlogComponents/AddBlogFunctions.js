@@ -14,7 +14,7 @@ import { useSelector } from "react-redux";
 import PhotoData from "../../../../ApiPhoto";
 
 const AddBlogFuntions = () => {
-  const logedUser = useSelector((state) => state.logedUser.user);
+  const [user, setUser] = useContext(Context);
 
   const [title, setTitle] = useState("");
 
@@ -31,8 +31,8 @@ const AddBlogFuntions = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (logedUser) {
-      setCreator(logedUser.lastName);
+    if (typeof user == "object") {
+      setCreator(user.lastName);
       getCurrentTimestamp();
     }
   });

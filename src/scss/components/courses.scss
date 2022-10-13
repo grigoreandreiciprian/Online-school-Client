@@ -1,8 +1,10 @@
+
+
 .courses{
 
     display: grid;
     grid-template-columns: 1fr;
-    width: 100%;
+    width: 80%;
     margin: auto;
     
 
@@ -12,7 +14,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 50px;
+        padding: 30px;
         background-color: white;
         color: black;
         border: 2px solid gray;
@@ -20,12 +22,18 @@
         width: 90%;
         transition: .3s all;
         animation: flip linear 1s 1;
+        
     }
 
     .course h1{
         font-size: 30px;
         text-align: center;
         margin: 0px;
+    }
+
+    .course h2{
+        font-size: 20px;
+        font-weight: bold;
     }
 
     .rating{
@@ -36,7 +44,8 @@
         color: gold;
         padding: 10px;
     }
-
+    
+    
     .creator{
         display: flex;
         flex-direction: row;
@@ -46,7 +55,7 @@
     }
 
     .icon{
-        width: 15%;
+        width: 30%;
         border-radius: 100px;
         margin: 10px;
     }
@@ -55,7 +64,8 @@
         padding: 10px;
         margin: 10px;
         font-size: 16px;
-        background-color: rgb(128, 128, 128, .3);
+        background-color: rgba(3, 1, 1, 0.7);
+        font-weight: bolder;
         color: $primary;
     }
 
@@ -65,12 +75,14 @@
     }
 
     .enroll{
-        padding:10px 20px;
+        padding:5px 20px;
         width:90%;
         font-size: 20px;
         font-weight: bolder;
         color: $primary;
     }
+
+   
 
     .enroll:hover{
         background-color: $primary;
@@ -81,10 +93,12 @@
         color: #1EB2A6;
         cursor: pointer;     
       }
+
+
 }
 
 
-@media (min-width:1000px){
+@media (min-width:720px) and (max-width:1250px){
 
     .courses{
 
@@ -100,12 +114,12 @@
 
 
 
-@media  (min-width:1500px){
+@media  (min-width:1250px){
     .courses{
 
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        width: 70%;
+        width: 80%;
         margin: auto;
         
     
@@ -145,7 +159,7 @@
         }
     
         .icon{
-            width: 15%;
+            width: 20%;
             border-radius: 100px;
             margin: 10px;
         }

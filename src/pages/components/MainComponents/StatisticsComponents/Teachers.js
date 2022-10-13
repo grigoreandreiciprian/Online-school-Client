@@ -72,8 +72,8 @@ const Teachers = () => {
 
       let nou = [];
       for (
-        let i = 4 * (number - 1);
-        i < 4 * number && i < teachers.length;
+        let i = 3 * (number - 1);
+        i < 3 * number && i < teachers.length;
         i++
       ) {
         nou.push(teachers[i]);
@@ -91,9 +91,9 @@ const Teachers = () => {
     let total = 0;
 
     if (teachers.length > 0) {
-      total = Math.floor(teachers.length / 4) + 1;
+      total = Math.floor(teachers.length / 3) + 1;
     } else {
-      total = Math.floor(teachers.length / 4) + 1;
+      total = Math.floor(teachers.length / 3) + 1;
     }
 
     for (let number = 1; number <= total; number++) {

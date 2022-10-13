@@ -14,7 +14,6 @@ const Main = () => {
       <main>
         <StatsMain />
         <BenefitsMain />
-
         <section className="coursesBox">
           <h1>Browse Our Online Courses</h1>
           <CoursesBox />

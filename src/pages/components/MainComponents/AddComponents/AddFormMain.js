@@ -5,13 +5,14 @@ import AddFormBody from "./AddFormBody";
 import Data from "../../../../Api";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { Context } from "../../../../Context/Context";
 
 const AddFormMain = () => {
   const navigate = useNavigate();
 
-  // const [user,setUser]= useContext(Context)
+  const [user, setUser] = useContext(Context);
 
-  const logedUser = useSelector((state) => state.logedUser.user);
+  const [logedUser, setLogged] = useState("");
 
   const [courseName, setCourseName] = useState("");
 
@@ -23,7 +24,9 @@ const AddFormMain = () => {
 
   const [perMonth, setPerMonth] = useState(0);
 
-  const [createdBy, setCreator] = useState("Unknown");
+  const [creatorFirstName, setCreatorFirst] = useState("");
+
+  const [creatorLastName, setCreatorLast] = useState("");
 
   const [creatorId, setId] = useState(0);
 
@@ -33,11 +36,29 @@ const AddFormMain = () => {
 
   const [category, setCategory] = useState("");
 
-  const distpatch = useDispatch();
+  const [creatorPicture, setCreatorPicture] = useState("");
+
+  const Api = new Data();
+
+  const userDetails = async () => {
+    const users = await Api.getUsers();
+
+    if (typeof user == "object") {
+      const logUser = users.filter((e) => e.id == user.id)[0];
+
+      setLogged(logUser);
+    }
+  };
 
   useEffect(() => {
-    if (logedUser) {
-      setCreator(logedUser.firstName + " " + logedUser.lastName);
+    userDetails();
+  }, [user]);
+
+  useEffect(() => {
+    if (typeof logedUser == "object") {
+      setCreatorFirst(logedUser.firstName);
+      setCreatorLast(logedUser.lastName);
+      setCreatorPicture(logedUser.picture.data);
       setId(logedUser.id);
     }
   });
@@ -70,13 +91,15 @@ const AddFormMain = () => {
         courseName,
         lectures,
         creatorId,
-        createdBy,
+        creatorFirstName,
+        creatorLastName,
         hours,
         totalPrice,
         perMonth,
         minEffort,
         maxEffort,
         category,
+        creatorPicture,
       });
 
       if (response.status == 204) {

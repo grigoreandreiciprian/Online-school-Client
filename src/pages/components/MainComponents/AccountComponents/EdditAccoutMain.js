@@ -1,24 +1,20 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Data from "../../../../Api";
 
 import EdditAccountBody from "./EdditAccountBody";
 
-import { useSelector } from "react-redux";
 import PhotoData from "../../../../ApiPhoto";
 
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { useContext } from "react";
 import { Context } from "../../../../Context/Context";
 
 const EdditAccoutMain = () => {
-  const [user, setUser] = useContext(Context);
-
-  const [logUser, setLogged] = useState("");
-
-  const api = new Data();
-
   const navigate = useNavigate();
+
+  const [user, setUser] = useContext(Context);
 
   const [firstName, setFirst] = useState("");
 
@@ -28,36 +24,24 @@ const EdditAccoutMain = () => {
 
   const [age, setAge] = useState("");
 
-  const [picture, setPicture] = useState(logUser.picture);
+  const [picture, setPicture] = useState("");
 
-  const id = logUser.id;
-
-  const userDetails = async () => {
-    const users = await api.getUsers();
-
-    const logUser = users.filter((e) => e.id == user.id)[0];
-
-    setLogged(logUser);
-  };
-
-  function toBase64(arr) {
-    return btoa(
-      arr.reduce((data, byte) => data + String.fromCharCode(byte), "")
-    );
-  }
+  const [id, setId] = useState(0);
 
   useEffect(() => {
-    if (logUser.picture != null && logUser.picture != 0) {
-      setPicture(`data:image/png;base64,${toBase64(logUser.picture.data)}`);
+    if (typeof user == "object") {
+      setId(user.id);
     }
-  }, [logUser]);
+  }, [user]);
 
-  const handleChanger = (firstName, lastName, email, age, picture) => {
+  console.log(id);
+
+  const handleChanger = (firstName, lastName, email, age, buffer) => {
     setFirst(firstName);
     setLast(lastName);
     setEmail(email);
     setAge(age);
-    setPicture(picture);
+    setPicture(buffer);
   };
 
   const updateProfile = async () => {
@@ -72,43 +56,71 @@ const EdditAccoutMain = () => {
         age,
       });
 
+      coursesUpdate();
+
       let photoData = new PhotoData();
 
-      let image = await photoData.uploadPhoto(id, picture);
+      if (picture != undefined) {
+        await photoData.uploadPhoto(id, picture);
+      }
 
       if (response.status == 204) {
-        navigate("/LogIn");
-
-        user = "";
+        navigate(`/MyAccount/${id}`);
       }
     } catch (e) {
       throw new Error(e);
     }
   };
 
-  const updatePhoto = async () => {
-    let data = new PhotoData();
-
-    console.log(picture);
-
-    let image = await data.uploadPhoto(id, picture);
-
-    console.log(image);
-
+  const coursesUpdate = async () => {
     try {
+      let data = new Data();
+      let photoData = new PhotoData();
+      let courses = await data.getCourses();
+
+      let profesorCourses = courses.filter((e) => e.creatorId == user.id);
+
+      profesorCourses.forEach(async (e) => {
+        if (firstName != undefined && lastName != undefined) {
+          let obj = {
+            id: e.id,
+            creatorFirstName: firstName,
+            creatorLastName: lastName,
+          };
+          await data.updateCourse(obj);
+        } else if (firstName != undefined) {
+          let obj = {
+            id: e.id,
+            creatorFirstName: firstName,
+          };
+
+          await data.updateCourse(obj);
+        } else if (lastName != undefined) {
+          let obj = {
+            id: e.id,
+            creatorLastName: lastName,
+          };
+
+          await data.updateCourse(obj);
+        }
+      });
+
+      profesorCourses.forEach(async (e) => {
+        if (picture != undefined) {
+          await photoData.uploadCoursePhoto(e.id, picture);
+        }
+      });
     } catch (e) {
       throw new Error(e);
     }
   };
 
   return (
-    <section class="formAcc">
+    <section className="formAcc">
       <EdditAccountBody
         handleChanger={handleChanger}
         updateProfile={updateProfile}
-        updatePhoto={updatePhoto}
         picture={picture}
-        logUser={logUser}
       />
     </section>
   );

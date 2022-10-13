@@ -12,14 +12,18 @@ const MyAccountBody = () => {
   const navigate = useNavigate();
 
   const [user, setUser] = useContext(Context);
-  const [userPicture, setUserPicture] = useState("");
+  const [logedUser, setLogedUser] = useState("");
+  const [userPicture, setPicture] = useState("");
   const api = new Data();
 
   const userDetails = async () => {
     const users = await api.getUsers();
 
-    const logUser = await users.filter((e) => e.id == user.id)[0];
-    setUserPicture(logUser);
+    if (typeof user == "object") {
+      const logUser = await users.filter((e) => e.id == user.id)[0];
+
+      setLogedUser(logUser);
+    }
   };
 
   useEffect(() => {
@@ -45,13 +49,10 @@ const MyAccountBody = () => {
   }
 
   useEffect(() => {
-    if (userPicture.picture != null && userPicture.picture != 0) {
-      console.log("Intra");
-      setUserPicture(
-        `data:image/png;base64,${toBase64(userPicture.picture.data)}`
-      );
+    if (logedUser.picture != null && logedUser.picture != 0) {
+      setPicture(`data:image/png;base64,${toBase64(logedUser.picture.data)}`);
     }
-  }, [userPicture]);
+  }, [logedUser]);
 
   return (
     <section className="AccformBody">
@@ -74,18 +75,18 @@ const MyAccountBody = () => {
               <div className="name">
                 <div className="nameBox">
                   <h1>First name</h1>
-                  <h1>{user.firstName}</h1>
+                  <h1>{logedUser.firstName}</h1>
                 </div>
                 <div className="nameBox">
                   <h1>Last name</h1>
-                  <h1>{user.lastName}</h1>
+                  <h1>{logedUser.lastName}</h1>
                 </div>
               </div>
 
               <div className="profileDetailBox">
-                <h1>Email: {user.email}</h1>
+                <h1>Email: {logedUser.email}</h1>
 
-                <h1>Age: {user.age}</h1>
+                <h1>Age: {logedUser.age}</h1>
               </div>
 
               <div className="buttons">

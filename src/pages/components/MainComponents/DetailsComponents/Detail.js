@@ -21,6 +21,8 @@ const Detail = ({ course }) => {
 
   const [User_id, setId] = useState(0);
 
+  const [creatorPic, setPic] = useState("");
+
   // let User_id = user.id;
 
   useEffect(() => {
@@ -28,6 +30,18 @@ const Detail = ({ course }) => {
       setId(user.id);
     }
   }, [user]);
+
+  function toBase64(arr) {
+    return btoa(
+      arr.reduce((data, byte) => data + String.fromCharCode(byte), "")
+    );
+  }
+
+  useEffect(() => {
+    if (course.creatorPicture != null && course.creatorPicture != 0) {
+      setPic(`data:image/png;base64,${toBase64(course.creatorPicture.data)}`);
+    }
+  }, [course]);
 
   let course_id = course.id;
 
@@ -145,8 +159,10 @@ const Detail = ({ course }) => {
       <Rating />
 
       <div className="creator">
-        <img src={profile} className="icon"></img>
-        <h2>by {course.createdBy}</h2>
+        <img src={creatorPic} className="icon"></img>
+        <h2>
+          by {course.creatorFirstName} {course.creatorLastName}
+        </h2>
       </div>
       <p>
         {course.lectures} lectures ({course.hours} hrs)

@@ -20,8 +20,6 @@ const BlogMain = () => {
 
   const [paginatioBlogs, setPaginationBlogs] = useState([]);
 
-  const logedUser = useSelector((state) => state.logedUser.user);
-
   const [removePic, setRemovePic] = useState("null");
 
   const navigate = useNavigate();
@@ -129,8 +127,8 @@ const BlogMain = () => {
         </div>
 
         {(() => {
-          if (logedUser) {
-            if (logedUser.role_id == 2) {
+          if (user) {
+            if (user.role_id == 2) {
               return (
                 <div className="buttons">
                   <button className="update blogBtn" onClick={add}>

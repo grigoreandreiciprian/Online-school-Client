@@ -1,5 +1,5 @@
 .formLog {
-  background-image: url("/imgs/formBackground.jpg");
+  background-image: url("../imgs/formBackground.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -18,7 +18,7 @@
   display: grid;
   grid-template-columns: 1fr;
   background-color: white;
-  height: 90%;
+  height: 100%;
   padding-top: 50px;
 }
 .formLog .btn {
@@ -54,10 +54,9 @@
   opacity: 0.8;
   font-size: 15px;
 }
-.formLog .formLog .logSign h4 {
-  border-bottom: 1px solid gray;
+.formLog h4 {
   margin-left: 5px;
-  font-size: 15px;
+  font-size: 20px;
 }
 .formLog .logSign h4:hover {
   cursor: pointer;

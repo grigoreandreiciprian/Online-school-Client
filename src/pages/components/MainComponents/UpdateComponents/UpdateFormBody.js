@@ -5,18 +5,18 @@ import { useState } from "react";
 import formImage from "../../../../imgs/loginImage.jpg";
 
 import { useNavigate } from "react-router-dom";
-const UpdateFormBody = ({ updateC, handleChanger }) => {
+const UpdateFormBody = ({ updateC, handleChanger, course }) => {
   const navigate = useNavigate();
 
-  const [courseName, setCourseName] = useState("");
+  const [courseName, setCourseName] = useState(course.courseName);
 
-  const [lectures, setLectures] = useState(0);
+  const [lectures, setLectures] = useState(course.lectures);
 
-  const [hours, setHours] = useState(0);
+  const [hours, setHours] = useState(course.hours);
 
-  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(course.totalPrice);
 
-  const [perMonth, setPerMonth] = useState(0);
+  const [perMonth, setPerMonth] = useState(course.perMonth);
 
   const cancel = () => {
     navigate("/");
@@ -52,6 +52,7 @@ const UpdateFormBody = ({ updateC, handleChanger }) => {
             type="text"
             className="courseName"
             placeholder="Course Name"
+            defaultValue={course.courseName}
           ></input>
         </div>
 
@@ -60,6 +61,7 @@ const UpdateFormBody = ({ updateC, handleChanger }) => {
             type="number"
             className="lectures"
             placeholder="Number of lectures"
+            defaultValue={course.lectures}
           ></input>
         </div>
 
@@ -68,6 +70,7 @@ const UpdateFormBody = ({ updateC, handleChanger }) => {
             type="number"
             className="hours"
             placeholder="Total Hours"
+            defaultValue={course.hours}
           ></input>
         </div>
 
@@ -76,6 +79,7 @@ const UpdateFormBody = ({ updateC, handleChanger }) => {
             type="number"
             className="minEffort"
             placeholder="Min Effort"
+            defaultValue={course.minEffort}
           ></input>
         </div>
 
@@ -84,6 +88,7 @@ const UpdateFormBody = ({ updateC, handleChanger }) => {
             type="number"
             className="maxEffort"
             placeholder="Max Effort"
+            defaultValue={course.maxEffort}
           ></input>
         </div>
 
@@ -92,6 +97,7 @@ const UpdateFormBody = ({ updateC, handleChanger }) => {
             type="number"
             className="totalPrice"
             placeholder="Total Price"
+            defaultValue={course.totalPrice}
           ></input>
         </div>
 
@@ -100,6 +106,7 @@ const UpdateFormBody = ({ updateC, handleChanger }) => {
             type="number"
             className="mounth"
             placeholder="Price per month"
+            defaultValue={course.perMonth}
           ></input>
         </div>
         <div className="buttons">

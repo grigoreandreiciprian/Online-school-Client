@@ -5,7 +5,7 @@
   align-items: center;
 }
 .details .detail {
-  width: 50%;
+  width: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -14,11 +14,18 @@
   font-size: 20px;
   padding: 20px;
 }
+.details .detail h3 {
+  text-align: center;
+}
 .details .detail h1 {
   text-align: center;
 }
 .details .detail p {
   text-align: center;
+  margin: 0px;
+}
+.details .rating {
+  margin: 0px;
 }
 .details .creator {
   display: flex;
@@ -29,6 +36,7 @@
 .details .creator img {
   width: 15%;
   padding: 10px;
+  border-radius: 100px;
 }
 .details .rating {
   padding: 20px;
@@ -44,7 +52,8 @@
 }
 .details .btn {
   padding: 10px 20px;
-  width: 50%;
+  max-width: 200px;
+  width: 100%;
   font-size: 23px;
   font-weight: bolder;
   margin: 10px;
@@ -78,6 +87,19 @@
   align-items: center;
   margin-top: 1rem;
   width: 50%;
+}
+
+@media (min-width: 720px) {
+  .details .detail p {
+    text-align: center;
+    margin: 0px;
+    width: 50%;
+  }
+  .details .creator img {
+    width: 25%;
+    padding: 10px;
+    border-radius: 100px;
+  }
 }
 
 /*# sourceMappingURL=Detaiils.css.map */

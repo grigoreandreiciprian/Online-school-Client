@@ -74,7 +74,7 @@ const SignInMain = () => {
 
       let photoData = new PhotoData();
 
-      let image = await photoData.uploadPhoto(student.id, picture);
+      await photoData.uploadPhoto(student.id, picture);
 
       log();
     } catch (e) {

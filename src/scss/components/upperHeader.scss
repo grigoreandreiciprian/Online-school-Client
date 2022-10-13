@@ -9,11 +9,11 @@
    color:white;  
    
      h2{
-        color: #1EB2A6;
+        color: white;
         font-weight: bolder;
         text-align: center;
-        width: 100%;
-        font-size: 25px;
+        width: 80%;
+        font-size: 22px;
      }
     .logo{
         display:flex;
@@ -25,9 +25,8 @@
     }
 
     .logo img{
-        width: 50%;
+        width: 200px;
         margin-bottom: 10px;
-        // max-width: 240px;
     }
 
      .logoLink{
@@ -57,20 +56,27 @@
     .sign{
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         margin-right: 2rem;
+        width: 100%;
+        margin: auto;
+    }
+
+    .sign h2{
+        width: 50%;
+        font-size: 20px;
     }
 
     .sign a{
         text-decoration: none;
-        font-size: 25px;
+        font-size: 20px;
         padding: 10px;
         color: white;
     }
     
      .sign i{
-        font-size: 40px;
+        font-size: 25px;
         transition: .3s all;
       }
       
@@ -93,8 +99,19 @@
 }
 
 
+@media(min-width:625px){
 
-@media (min-width:1500px){
+    .upperHeader{
+        .sign{
+            width: 50%;
+        }
+
+    }
+}
+
+
+
+@media (min-width:1600px){
 
     .upperHeader{
 
@@ -120,7 +137,7 @@
          }
      
          .logo img{
-             width: 60%;
+             width: 70%;
              margin-bottom: 10px;
          }
      
@@ -137,18 +154,19 @@
              display: grid;
              grid-template-columns: 1fr 1fr; 
             //  grid-gap:100px;  
-             width: 50%;
+             width:100%;
          }
      
          .contactBox{
              display: flex;
              flex-direction: row;
-             justify-content: center;
-             align-items: center;
+             justify-content: flex-start;
+             align-items: flex-start;
+            //  border: 2px solid red;
          }
      
          .contactBox i{
-             font-size: 35px;
+             font-size: 30px;
              padding: 20px;
          }
      
@@ -161,7 +179,7 @@
          }
      
          .social i{
-             font-size:25px ;
+             font-size:20px ;
              padding: 10px;
              border-radius: 100px;
              background-color: white;
@@ -180,6 +198,14 @@
              flex-direction: row;
              justify-content: center;
              align-items: center;
+         }
+
+         .sign i{
+            font-size: 35px;
+         }
+
+         .sign h2{
+            font-size: 25px;
          }
      
          .sign a{
